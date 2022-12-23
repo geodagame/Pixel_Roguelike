@@ -9,7 +9,7 @@ var rapidez : float = 3 * Pixeles_por_metro
 
 
 func _ready():
-	pass # Replace with function body.
+	print("ignorar") 
 
 func _input(event):
 	direction.normalized()
@@ -30,3 +30,5 @@ func _process(delta):
 	velocidad.y = direction.y * rapidez
 	
 	velocidad = move_and_slide(velocidad)
+
+
