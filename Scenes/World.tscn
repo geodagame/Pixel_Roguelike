@@ -7,4 +7,4 @@
 script = ExtResource( 2 )
 
 [node name="StartRoom01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 318, 169 )
+position = Vector2( 174, 106 )
