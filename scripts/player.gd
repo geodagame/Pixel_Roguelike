@@ -5,6 +5,7 @@ var Pixeles_por_metro : int = 35
 var direction : Vector2
 var velocidad : Vector2
 var rapidez : float = 3 * Pixeles_por_metro
+var normalized = direction.normalized()
 
 
 
@@ -14,7 +15,7 @@ func _ready():
 
 ##controles para el movimiento
 
-func _input(event):
+func _input(_event):
 	direction.normalized()
 	direction = Vector2(0,0)
 	if Input.is_action_pressed("ui_left"):
@@ -28,7 +29,7 @@ func _input(event):
 
 ## velicidad de movimiento y tipo de movimiento
 
-func _process(delta):
+func _process(_delta):
 	velocidad.x = direction.x * rapidez
 	velocidad.y = direction.y * rapidez
 	

@@ -34,13 +34,11 @@ func _spawn_monsters():
 		
 
 func _initialize_room():
-<<<<<<< HEAD
-	
-=======
+
 	# Inicializa la habitación.
 	
 	playerDetector.queue_free()
->>>>>>> ecd750561e2c3eab32b667e033dc6d515fa38087
+
 	_spawn_monsters()
 	for door in _container_doors.get_children():
 		door.close();
