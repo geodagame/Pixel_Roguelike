@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=2]
 
-[node name="world" type="TileMap"]
+[node name="node2d" type="TileMap"]
 format = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
