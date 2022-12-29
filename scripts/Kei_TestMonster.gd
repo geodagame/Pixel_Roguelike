@@ -7,15 +7,21 @@ var velocity = Vector2.ZERO
 var _is_timer_finished = false
 
 func _ready():
+	# Inicia el Timer para el movimiento
+	
 	timer.start(2);
 	
 func _physics_process(delta):
+	#Movimiento del monstruo
 	
 	if _is_timer_finished == true:
+		#Usa un sistema de aleatoriedad para el movimiento
+		#Decide una dirección aleatoria cada vez que el timer se apaga
+		
 		var direction = Vector2.ZERO
+		
 		rng.randomize();
 		direction = rng.randf_range(1, 4);
-		
 		if direction < 2:
 			velocity = Vector2.UP * 10
 		elif direction < 3:
@@ -27,12 +33,13 @@ func _physics_process(delta):
 		else:
 			print("Error in enemy movement")
 			
-		
 		timer.start(2);
-		_is_timer_finished = false;
+		_is_timer_finished = false; 
+	
 	velocity = move_and_slide(velocity)
 	
 	
 func _on_Timer_timeout():
+	#Convierte la velocidad del enemigo en 0, para que se detenga el enemigo.
 	velocity = Vector2.ZERO
 	_is_timer_finished = true;

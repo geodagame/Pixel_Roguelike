@@ -9,6 +9,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
+		#DevOnly: Inicia el juego
 		start_room._initialize_room();
 		
 	

@@ -24,9 +24,13 @@
 script = ExtResource( 2 )
 
 [node name="StartRoom01" parent="." instance=ExtResource( 1 )]
+<<<<<<< HEAD
 position = Vector2( 318, 169 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 25, 25 )
 format = 1
+=======
+position = Vector2( 174, 106 )
+>>>>>>> ecd750561e2c3eab32b667e033dc6d515fa38087
