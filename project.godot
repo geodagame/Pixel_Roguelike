@@ -11,7 +11,11 @@ config_version=4
 [application]
 
 config/name="Pixel_Roguelike"
+<<<<<<< HEAD
 run/main_scene="res://Scenes/Kei_DevRoom.tscn"
+=======
+run/main_scene="res://Scenes/world.tscn"
+>>>>>>> d825ebac1be67efb4855a27e5f7afe3cf9627205
 config/icon="res://icon.png"
 
 [display]
