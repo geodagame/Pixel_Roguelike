@@ -25,7 +25,7 @@ func _spawn_monsters():
 		
 
 func _initialize_room():
-	playerDetector.queue_free()
+	
 	_spawn_monsters()
 	for door in _container_doors.get_children():
 		door.close();

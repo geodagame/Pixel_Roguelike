@@ -1,8 +1,12 @@
 extends KinematicBody2D
 
+##variables del enemigo
+
 var Player = null
 var Movement = Vector2.ZERO
 var Speed = 100
+
+##codigo para que nos siga el enemigo
 
 func _physics_process(delta):
 	Movement = Vector2.ZERO
@@ -15,6 +19,7 @@ func _physics_process(delta):
 	Movement = Movement.normalized() * Speed
 	Movement = move_and_slide(Movement)
 
+## codigos que detecta cuando el jugador entra o sale de la vista del enemigo
 
 func _on_Area2D_body_entered(body):
 	

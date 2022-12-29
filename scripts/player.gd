@@ -1,4 +1,5 @@
 extends KinematicBody2D
+##variables de movimiento, velocidad y direccion
 
 var Pixeles_por_metro : int = 35
 var direction : Vector2
@@ -10,6 +11,8 @@ var rapidez : float = 3 * Pixeles_por_metro
 
 func _ready():
 	print("ignorar") 
+
+##controles para el movimiento
 
 func _input(event):
 	direction.normalized()
@@ -23,7 +26,7 @@ func _input(event):
 	if Input.is_action_pressed("ui_down"):
 		direction.y = 1
 
-
+## velicidad de movimiento y tipo de movimiento
 
 func _process(delta):
 	velocidad.x = direction.x * rapidez
