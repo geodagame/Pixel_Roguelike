@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DungeonDoor.png-01d57e5e3cade865bdaba0aaeb2b33c2.stex"
+path="res://.import/RoomWalls2.png-40a52390a299e0d82d1300fa79cb5eda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rooms/DungeonDoor.png"
-dest_files=[ "res://.import/DungeonDoor.png-01d57e5e3cade865bdaba0aaeb2b33c2.stex" ]
+source_file="res://Sprites/Rooms/RoomWalls2.png"
+dest_files=[ "res://.import/RoomWalls2.png-40a52390a299e0d82d1300fa79cb5eda.stex" ]
 
 [params]
 
