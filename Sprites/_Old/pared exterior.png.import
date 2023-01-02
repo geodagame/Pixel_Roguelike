@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pared exterior.png-468b3fdd29d17fb6f59dfd241bb5ec74.stex"
+path="res://.import/pared exterior.png-51b9a67e0023fc24f654b318d4729227.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/_Editables/pared exterior.png"
-dest_files=[ "res://.import/pared exterior.png-468b3fdd29d17fb6f59dfd241bb5ec74.stex" ]
+source_file="res://Sprites/_Old/pared exterior.png"
+dest_files=[ "res://.import/pared exterior.png-51b9a67e0023fc24f654b318d4729227.stex" ]
 
 [params]
 
