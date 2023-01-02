@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pared interior.png-495be5d1f24b8899890f4fc2437de045.stex"
+path="res://.import/RoomWalls2.png-f0bbd99be9002c64227bd5d475086d4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/_Old/pared interior.png"
-dest_files=[ "res://.import/pared interior.png-495be5d1f24b8899890f4fc2437de045.stex" ]
+source_file="res://Sprites/Rooms/Dungeon_WallTileset2/RoomWalls2.png"
+dest_files=[ "res://.import/RoomWalls2.png-f0bbd99be9002c64227bd5d475086d4b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

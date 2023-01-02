@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pared interior.png-495be5d1f24b8899890f4fc2437de045.stex"
+path="res://.import/tileset_Dungon_WallTileset_Final.png-98d96f42f6a2123b007be80bb6f097b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/_Old/pared interior.png"
-dest_files=[ "res://.import/pared interior.png-495be5d1f24b8899890f4fc2437de045.stex" ]
+source_file="res://Sprites/Rooms/Dungon_WallTileset_Final/tileset_Dungon_WallTileset_Final.png"
+dest_files=[ "res://.import/tileset_Dungon_WallTileset_Final.png-98d96f42f6a2123b007be80bb6f097b0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
