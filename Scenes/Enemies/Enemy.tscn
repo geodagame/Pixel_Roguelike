@@ -8,7 +8,7 @@ radius = 12.0
 height = 0.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 117.209
+radius = 80.1561
 
 [node name="enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -26,7 +26,6 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2( 1, 4 )
 shape = SubResource( 2 )
 
