@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_Dungeon_WallTileset2.png-a40415e02c807bb34e6a859fa9d840d9.stex"
+path="res://.import/Dungeon_RoomTiles.png-5e88e65992d159ead69a1f755d2222c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rooms/Dungeon_WallTileset2/tileset_Dungeon_WallTileset2.png"
-dest_files=[ "res://.import/tileset_Dungeon_WallTileset2.png-a40415e02c807bb34e6a859fa9d840d9.stex" ]
+source_file="res://Sprites/_Editables/Dungeon_RoomTiles.png"
+dest_files=[ "res://.import/Dungeon_RoomTiles.png-5e88e65992d159ead69a1f755d2222c7.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

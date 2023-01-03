@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RoomWalls.png-dbbba2a8a113e8f3dca83fcc070abc48.stex"
+path="res://.import/antorcha.png-6287387b47c0e760cab48e19d8d217fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rooms/RoomWalls.png"
-dest_files=[ "res://.import/RoomWalls.png-dbbba2a8a113e8f3dca83fcc070abc48.stex" ]
+source_file="res://Sprites/Decoraciones/antorcha.png"
+dest_files=[ "res://.import/antorcha.png-6287387b47c0e760cab48e19d8d217fe.stex" ]
 
 [params]
 
