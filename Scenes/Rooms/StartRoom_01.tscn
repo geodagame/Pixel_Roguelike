@@ -1,9 +1,8 @@
 [gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Kei_Main.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Rooms/Base_Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=3]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -202,10 +201,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=43]
+[sub_resource type="TileSet" id=51]
 resource_local_to_scene = true
 1/name = "FloorLinesAutotile"
-1/texture = ExtResource( 4 )
+1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 112, 96 )
@@ -228,7 +227,7 @@ resource_local_to_scene = true
 1/shapes = [  ]
 1/z_index = 0
 3/name = "PlainFloor"
-3/texture = ExtResource( 4 )
+3/texture = ExtResource( 3 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 112, 0, 16, 16 )
@@ -243,7 +242,7 @@ resource_local_to_scene = true
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Dungeon_Wall 01"
-4/texture = ExtResource( 5 )
+4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 16, 16 )
@@ -264,7 +263,7 @@ resource_local_to_scene = true
 } ]
 4/z_index = 0
 5/name = "Dungeon_Wall 02"
-5/texture = ExtResource( 5 )
+5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 16, 0, 16, 16 )
@@ -285,7 +284,7 @@ resource_local_to_scene = true
 } ]
 5/z_index = 0
 6/name = "Dungeon_Wall 03"
-6/texture = ExtResource( 5 )
+6/texture = ExtResource( 2 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 0, 16, 16 )
@@ -306,7 +305,7 @@ resource_local_to_scene = true
 } ]
 6/z_index = 0
 7/name = "Dungeon_Wall 04"
-7/texture = ExtResource( 5 )
+7/texture = ExtResource( 2 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 48, 0, 16, 16 )
@@ -327,22 +326,29 @@ resource_local_to_scene = true
 } ]
 7/z_index = 0
 
-[node name="Kei_DevRoom" type="Node2D"]
-script = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 80, 24.25 )
 
-[node name="StartRoom01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 147, 121 )
+[node name="StartRoom01" instance=ExtResource( 1 )]
 
-[node name="TileMap" parent="StartRoom01/Navigation2D" index="0"]
-tile_set = SubResource( 43 )
+[node name="TileMap" parent="Navigation2D" index="0"]
+tile_set = SubResource( 51 )
+tile_data = PoolIntArray( -262149, -2147483644, 0, -262148, -2147483644, 0, -262147, -2147483644, 0, -262146, -1073741819, 0, -262145, -1610612727, 0, -327680, -1610612727, 0, -327679, -1610612731, 0, -327678, -2147483644, 0, -327677, -2147483644, 0, -327676, -2147483644, 0, -196613, -2147483644, 0, -196612, -2147483641, 0, -196611, 5, 0, -196610, -2147483642, 0, -196609, 3, 0, -262144, 3, 0, -262143, -1610612730, 0, -262142, 5, 0, -262141, -1610612729, 0, -262140, -2147483644, 0, -131078, -2147483644, 0, -131077, -2147483644, 0, -131076, -2147483643, 0, -131075, 1, 4, -131074, 1, 196609, -131073, 1, 262147, -196608, 1, 262147, -196607, 1, 196613, -196606, 1, 6, -196605, -1610612731, 0, -196604, -2147483644, 0, -196603, -2147483644, 0, -65543, -2147483644, 0, -65542, -2147483644, 0, -65541, -2147483641, 0, -65540, -2147483642, 0, -65539, 1, 65540, -65538, 1, 65542, -65537, 3, 0, -131072, 3, 0, -131071, 1, 65540, -131070, 1, 65542, -131069, -1610612730, 0, -131068, -1610612729, 0, -131067, -2147483644, 0, -131066, -2147483644, 0, -7, -2147483644, 0, -6, -2147483641, 0, -5, -2147483642, 0, -4, 1, 0, -3, 1, 327685, -2, 1, 65537, -1, 1, 262147, -65536, 1, 262147, -65535, 1, 65537, -65534, 1, 327681, -65533, 1, 2, -65532, -1610612730, 0, -65531, -1610612729, 0, -65530, -2147483644, 0, 65529, -2147483644, 0, 65530, -2147483643, 0, 65531, 3, 0, 65532, 1, 65539, 65533, 3, 0, 65534, 1, 65539, 65535, 3, 0, 0, 3, 0, 1, 1, 65539, 2, 3, 0, 3, 1, 65539, 4, 3, 0, 5, -1610612731, 0, 6, -2147483644, 0, 131065, -2147483644, 0, 131066, -2147483643, 0, 131067, 3, 0, 131068, 1, 65539, 131069, 3, 0, 131070, 1, 65539, 131071, 3, 0, 65536, 3, 0, 65537, 1, 65539, 65538, 3, 0, 65539, 1, 65539, 65540, 3, 0, 65541, -1610612731, 0, 65542, -2147483644, 0, 196601, -2147483644, 0, 196602, -1073741817, 0, 196603, -1073741818, 0, 196604, 1, 131072, 196605, 1, 262147, 196606, 1, 131073, 196607, 1, 262147, 131072, 1, 262147, 131073, 1, 131073, 131074, 1, 262147, 131075, 1, 131074, 131076, -536870906, 0, 131077, 1610612743, 0, 131078, -2147483644, 0, 262137, -2147483644, 0, 262138, -2147483644, 0, 262139, -1073741817, 0, 262140, 1073741829, 0, 262141, 1073741829, 0, 262142, 1073741829, 0, 262143, 1073741829, 0, 196608, 1073741829, 0, 196609, 1073741829, 0, 196610, 1073741829, 0, 196611, 1073741829, 0, 196612, 1610612743, 0, 196613, -2147483644, 0, 196614, -2147483644, 0, 327674, -2147483644, 0, 327675, -2147483644, 0, 327676, -2147483644, 0, 327677, -2147483644, 0, 327678, -2147483644, 0, 327679, -2147483644, 0, 262144, -2147483644, 0, 262145, -2147483644, 0, 262146, -2147483644, 0, 262147, -2147483644, 0, 262148, -2147483644, 0, 262149, -2147483644, 0 )
 
-[node name="Position2D" parent="StartRoom01/EnemyPosition" index="0"]
-position = Vector2( -68, 21 )
+[node name="Door" parent="Doors" index="0"]
+position = Vector2( 0, -56 )
 
-[node name="CollisionShape2D" parent="StartRoom01/PlayerDetector" index="0"]
-position = Vector2( 0, -9.25 )
+[node name="Position2D" parent="EnemyPosition" index="0"]
+position = Vector2( -32, -32 )
 
-[node name="PlayerSpawn" parent="StartRoom01" index="5"]
-position = Vector2( -24, 43 )
+[node name="PlayerDetector" parent="." index="4"]
+position = Vector2( 0, 17 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[editable path="StartRoom01"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
+shape = SubResource( 50 )
+
+[node name="PlayerSpawn" type="Position2D" parent="." index="5"]
+position = Vector2( -16, 17 )

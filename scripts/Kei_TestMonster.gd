@@ -11,7 +11,7 @@ func _ready():
 	
 	timer.start(2);
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	#Movimiento del monstruo
 	
 	if _is_timer_finished == true:

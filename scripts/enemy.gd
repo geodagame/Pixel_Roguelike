@@ -1,14 +1,15 @@
 extends KinematicBody2D
 
-##variables del enemigo
+## Variables
 
 var Player = null
 var Movement = Vector2.ZERO
 var Speed = 100
 
-##codigo para que nos siga el enemigo
+## Codigo para que nos siga el enemigo
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	
 	Movement = Vector2.ZERO
 	
 	if Player != null:
@@ -25,9 +26,9 @@ func _on_Area2D_body_entered(body):
 	
 	if body != self:
 		Player = body
-	
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
+	
 	Player = null
 
 

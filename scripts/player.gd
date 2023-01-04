@@ -16,7 +16,7 @@ func _ready():
 ##controles para el movimiento
 
 func _input(_event):
-	direction.normalized()
+	normalized = direction.normalized()
 	direction = Vector2(0,0)
 	if Input.is_action_pressed("ui_left"):
 		#animation.play("walk")
