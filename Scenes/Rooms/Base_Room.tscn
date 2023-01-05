@@ -1,9 +1,9 @@
 [gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Kei_Main.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Rooms/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/RoomScript.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -202,7 +202,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=43]
+[sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
 1/name = "FloorLinesAutotile"
 1/texture = ExtResource( 4 )
@@ -243,7 +243,7 @@ resource_local_to_scene = true
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Dungeon_Wall 01"
-4/texture = ExtResource( 5 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 16, 16 )
@@ -264,7 +264,7 @@ resource_local_to_scene = true
 } ]
 4/z_index = 0
 5/name = "Dungeon_Wall 02"
-5/texture = ExtResource( 5 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 16, 0, 16, 16 )
@@ -285,7 +285,7 @@ resource_local_to_scene = true
 } ]
 5/z_index = 0
 6/name = "Dungeon_Wall 03"
-6/texture = ExtResource( 5 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 0, 16, 16 )
@@ -306,7 +306,7 @@ resource_local_to_scene = true
 } ]
 6/z_index = 0
 7/name = "Dungeon_Wall 04"
-7/texture = ExtResource( 5 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 48, 0, 16, 16 )
@@ -327,22 +327,33 @@ resource_local_to_scene = true
 } ]
 7/z_index = 0
 
-[node name="Kei_DevRoom" type="Node2D"]
-script = ExtResource( 2 )
+[node name="Room" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="StartRoom01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 147, 121 )
+[node name="Navigation2D" type="Navigation2D" parent="."]
 
-[node name="TileMap" parent="StartRoom01/Navigation2D" index="0"]
-tile_set = SubResource( 43 )
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+bake_navigation = true
+format = 1
+tile_data = PoolIntArray( -262149, -536870903, 0, -262148, -536870903, 0, -262147, -536870903, 0, -262146, -1610612727, 0, -262145, -1610612727, 0, -327680, -1610612727, 0, -327679, -1610612727, 0, -327678, -536870903, 0, -327677, -536870903, 0, -327676, -536870903, 0, -196613, -536870903, 0, -196612, -2147483635, 0, -262140, -536870903, 0, 262137, -536870903, 0, 327674, -536870903, 0, 327675, -536870903, 0, 327676, -536870903, 0, 327677, -536870903, 0, 327678, -536870903, 0, 327679, -536870903, 0, 262144, -536870903, 0, 262145, -536870903, 0, 262146, -536870903, 0, 262147, -536870903, 0, 262148, -536870903, 0, 262149, -536870903, 0 )
 
-[node name="Position2D" parent="StartRoom01/EnemyPosition" index="0"]
-position = Vector2( -68, 21 )
+[node name="TileMap2" type="TileMap" parent="Navigation2D"]
+bake_navigation = true
+format = 1
 
-[node name="CollisionShape2D" parent="StartRoom01/PlayerDetector" index="0"]
-position = Vector2( 0, -9.25 )
+[node name="Entrance" type="Node2D" parent="."]
 
-[node name="PlayerSpawn" parent="StartRoom01" index="5"]
-position = Vector2( -24, 43 )
+[node name="Doors" type="Node2D" parent="."]
 
-[editable path="StartRoom01"]
+[node name="Door" parent="Doors" instance=ExtResource( 2 )]
+
+[node name="EnemyPosition" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="EnemyPosition"]
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_area_entered"]

@@ -1,6 +1,7 @@
 extends Node2D
 
-var enemy_data = {"Test Monster" : preload("res://Scenes/Enemies/TestMonster.tscn")}
+var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Enemy.tscn"),
+	"TestMonster" : preload("res://Scenes/Enemies/TestMonster.tscn")}
 var num_enemies
 
 onready var _container_doors = $Doors
@@ -26,22 +27,22 @@ func _spawn_monsters():
 	# Coloca un enemigo en cada Position2D
 	
 	for enemyPosition in _container_enemyPosition.get_children():
-		var enemy = enemy_data["Test Monster"].instance()
+		var enemy = enemy_data["Enemy"].instance()
 		
 		enemy.connect("tree_exited", self, "on_enemy_killed")
-		enemy.global_position = enemyPosition.global_position
+		enemy.position = enemyPosition.position
 		call_deferred("add_child", enemy)
 		
 
 func _initialize_room():
-
 	# Inicializa la habitación.
 	
 	playerDetector.queue_free()
-
 	_spawn_monsters()
 	for door in _container_doors.get_children():
 		door.close();
 		
 func _on_PlayerDetector_area_entered(area):
 	_initialize_room()
+
+#---------------------------------------------------

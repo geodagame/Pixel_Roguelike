@@ -1,9 +1,9 @@
 [gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Kei_Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Rooms/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Rooms/Base_Room.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -243,7 +243,7 @@ resource_local_to_scene = true
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Dungeon_Wall 01"
-4/texture = ExtResource( 5 )
+4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 16, 16 )
@@ -264,7 +264,7 @@ resource_local_to_scene = true
 } ]
 4/z_index = 0
 5/name = "Dungeon_Wall 02"
-5/texture = ExtResource( 5 )
+5/texture = ExtResource( 3 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 16, 0, 16, 16 )
@@ -285,7 +285,7 @@ resource_local_to_scene = true
 } ]
 5/z_index = 0
 6/name = "Dungeon_Wall 03"
-6/texture = ExtResource( 5 )
+6/texture = ExtResource( 3 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 0, 16, 16 )
@@ -306,7 +306,7 @@ resource_local_to_scene = true
 } ]
 6/z_index = 0
 7/name = "Dungeon_Wall 04"
-7/texture = ExtResource( 5 )
+7/texture = ExtResource( 3 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 48, 0, 16, 16 )
@@ -327,22 +327,11 @@ resource_local_to_scene = true
 } ]
 7/z_index = 0
 
-[node name="Kei_DevRoom" type="Node2D"]
-script = ExtResource( 2 )
+[node name="Room" instance=ExtResource( 2 )]
 
-[node name="StartRoom01" parent="." instance=ExtResource( 1 )]
-position = Vector2( 147, 121 )
-
-[node name="TileMap" parent="StartRoom01/Navigation2D" index="0"]
+[node name="TileMap" parent="Navigation2D" index="0"]
 tile_set = SubResource( 43 )
+tile_data = PoolIntArray( -262149, -536870903, 0, -262148, -536870903, 0, -262147, -536870903, 0, -262146, -1610612727, 0, -262145, -1610612727, 0, -327680, -1610612727, 0, -327679, -1610612727, 0, -327678, -536870903, 0, -327677, -536870903, 0, -327676, -536870903, 0, -196613, -536870903, 0, -196612, -2147483635, 0, -262140, -536870903, 0, -2, -1073741819, 0, -65535, -1610612731, 0, 65529, -2147483641, 0, 65530, 536870917, 0, 65531, 536870917, 0, 65532, 536870917, 0, 65533, 536870917, 0, 65534, 6, 0, 65535, 1073741827, 0, 0, 1073741827, 0, 1, -1610612730, 0, 2, 5, 0, 3, -1610612729, 0, 131065, -2147483643, 0, 131066, 1073741827, 0, 131067, 1073741827, 0, 131068, 1073741827, 0, 131069, 1073741827, 0, 131070, 1073741827, 0, 131071, 1073741827, 0, 65536, 1073741827, 0, 65537, 1073741827, 0, 65538, 1073741827, 0, 65539, -1610612731, 0, 196601, -2147483643, 0, 196602, -2147483647, 0, 196603, 1073741825, 262147, 196604, 536870913, 1, 196605, 1073741825, 262147, 196606, 1073741825, 262147, 196607, 1073741825, 262147, 131072, 1073741825, 262147, 131073, 1073741825, 327683, 131074, 1073741827, 0, 131075, -1610612731, 0, 262137, -2147483643, 0, 262138, 1073741825, 65539, 262139, 1073741827, 0, 262140, 536870913, 65539, 262141, 1073741827, 0, 262142, 1073741827, 0, 262143, 1073741827, 0, 196608, 1073741827, 0, 196609, 1073741827, 0, 196610, 1073741827, 0, 196611, -1610612731, 0, 327673, -2147483643, 0, 327674, 1073741825, 65536, 327675, 1073741825, 262147, 327676, 1073741825, 65538, 327677, -536870906, 0, 327678, 1610612741, 0, 327679, 1610612741, 0, 262144, 1610612741, 0, 262145, 1610612741, 0, 262146, 1610612741, 0, 262147, 1610612743, 0, 262148, -536870903, 0, 262149, -536870903, 0, 393209, -2147483643, 0, 393210, 1073741825, 65539, 393211, 1073741827, 0, 393212, 536870913, 65539, 393213, 536870918, 0, 393214, 536870917, 0, 393215, 536870917, 0, 327680, 536870917, 0, 327681, 536870917, 0, 327682, 536870917, 0, 327683, 536870919, 0, 458745, -2147483643, 0, 458746, 1073741825, 65536, 458747, 1073741825, 262147, 458748, 1073741825, 65538, 458749, 1073741827, 0, 458750, 1073741827, 0, 458751, 1073741827, 0, 393216, 1073741827, 0, 393217, 1073741827, 0, 393218, 1073741827, 0, 393219, -536870907, 0, 524281, -2147483643, 0, 524282, 1073741825, 65539, 524283, 1073741827, 0, 524284, 1073741825, 65536, 524285, 1073741825, 262147, 524286, 1073741825, 262147, 524287, 1073741825, 262147, 458752, 1073741825, 262147, 458753, 1073741825, 327683, 458754, 1073741827, 0, 458755, -536870907, 0, 589817, -2147483643, 0, 589818, -536870911, 131072, 589819, 1073741825, 262147, 589820, -2147483647, 131074, 589821, 1073741827, 0, 589822, 1073741827, 0, 589823, 1073741827, 0, 524288, 1073741827, 0, 524289, 1073741827, 0, 524290, 1073741827, 0, 524291, -536870907, 0, 655353, 1073741831, 0, 655354, 1073741829, 0, 655355, 1073741829, 0, 655356, 1073741830, 0, 655357, 1073741827, 0, 655358, 1073741827, 0, 655359, -536870906, 0, 589824, 1073741829, 0, 589825, 1073741829, 0, 589826, 1073741829, 0, 589827, -536870905, 0, 720892, 1073741831, 0, 720893, 1073741827, 0, 720894, 1073741827, 0, 720895, -536870905, 0 )
 
-[node name="Position2D" parent="StartRoom01/EnemyPosition" index="0"]
-position = Vector2( -68, 21 )
-
-[node name="CollisionShape2D" parent="StartRoom01/PlayerDetector" index="0"]
-position = Vector2( 0, -9.25 )
-
-[node name="PlayerSpawn" parent="StartRoom01" index="5"]
-position = Vector2( -24, 43 )
-
-[editable path="StartRoom01"]
+[node name="Door" parent="Navigation2D/TileMap" index="0" instance=ExtResource( 1 )]
+position = Vector2( -32, 168 )

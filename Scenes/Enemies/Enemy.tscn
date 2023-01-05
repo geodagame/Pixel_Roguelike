@@ -4,23 +4,20 @@
 [ext_resource path="res://Sprites/Enemies/TestMonster.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 12.0
+radius = 7.0
 height = 0.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 80.1561
 
-[node name="enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -0.5 )
-scale = Vector2( 2, 2.1875 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 0 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
