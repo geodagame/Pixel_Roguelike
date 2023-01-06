@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Enemies/Base_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Rooms/RoomWalls.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 
 
@@ -12,7 +11,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="TileSet" id=2]
 resource_local_to_scene = true
 0/name = "BaseWalls"
-0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 176, 80 )
@@ -361,7 +359,6 @@ resource_local_to_scene = true
 3/shapes = [  ]
 3/z_index = 0
 4/name = "RoomWalls.png 4"
-4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 32, 16, 16 )
@@ -375,7 +372,6 @@ resource_local_to_scene = true
 4/shapes = [  ]
 4/z_index = 0
 5/name = "RoomWalls.png 5"
-5/texture = ExtResource( 3 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 16, 16, 16 )
@@ -389,7 +385,6 @@ resource_local_to_scene = true
 5/shapes = [  ]
 5/z_index = 0
 6/name = "RoomWalls.png 6"
-6/texture = ExtResource( 3 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 16, 16 )
@@ -403,7 +398,6 @@ resource_local_to_scene = true
 6/shapes = [  ]
 6/z_index = 0
 7/name = "RoomWalls.png 7"
-7/texture = ExtResource( 3 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 16, 0, 16, 16 )
@@ -417,7 +411,6 @@ resource_local_to_scene = true
 7/shapes = [  ]
 7/z_index = 0
 8/name = "RoomWalls.png 8"
-8/texture = ExtResource( 3 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 32, 0, 16, 16 )
@@ -431,7 +424,6 @@ resource_local_to_scene = true
 8/shapes = [  ]
 8/z_index = 0
 9/name = "RoomWalls.png 9"
-9/texture = ExtResource( 3 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 16, 16, 16, 16 )
@@ -445,7 +437,6 @@ resource_local_to_scene = true
 9/shapes = [  ]
 9/z_index = 0
 10/name = "RoomWalls.png 10"
-10/texture = ExtResource( 3 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 32, 16, 16, 16 )
@@ -459,7 +450,6 @@ resource_local_to_scene = true
 10/shapes = [  ]
 10/z_index = 0
 11/name = "RoomWalls.png 11"
-11/texture = ExtResource( 3 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 16, 32, 16, 16 )
@@ -473,7 +463,6 @@ resource_local_to_scene = true
 11/shapes = [  ]
 11/z_index = 0
 12/name = "RoomWalls.png 12"
-12/texture = ExtResource( 3 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 32, 32, 16, 16 )
@@ -487,7 +476,6 @@ resource_local_to_scene = true
 12/shapes = [  ]
 12/z_index = 0
 13/name = "RoomWalls.png 13"
-13/texture = ExtResource( 3 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 80, 16, 16, 16 )
@@ -501,7 +489,6 @@ resource_local_to_scene = true
 13/shapes = [  ]
 13/z_index = 0
 14/name = "RoomWalls.png 14"
-14/texture = ExtResource( 3 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 32, 64, 16, 16 )
