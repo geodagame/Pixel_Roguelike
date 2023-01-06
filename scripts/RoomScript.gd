@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Enemy.tscn"),
+var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Base_Enemy.tscn"),
 	"TestMonster" : preload("res://Scenes/Enemies/TestMonster.tscn")}
 var num_enemies
 

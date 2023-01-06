@@ -4,7 +4,7 @@ extends KinematicBody2D
 var Pixeles_por_metro : int = 35
 var direction : Vector2
 var velocidad : Vector2
-var rapidez : float = 3 * Pixeles_por_metro
+var rapidez : float = 1 * Pixeles_por_metro
 var normalized = direction.normalized()
 
 
