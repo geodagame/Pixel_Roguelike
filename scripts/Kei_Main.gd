@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var _container_doors = $Doors
 onready var start_room = $StartRoom01
 onready var player_spawn = $StartRoom01/PlayerSpawn
 
@@ -24,11 +25,11 @@ func _process(_delta):
 			_is_game_started = true
 	if Input.is_action_just_pressed("DevOnly_OpenDoors"):
 		#DevOnly: Fuerza la apertura de todas las puertas
-		for door in start_room._container_doors.get_children():
+		for door in _container_doors.get_children():
 			door.open()
 	if Input.is_action_just_pressed("DevOnly_CloseDoors"):
 		#DevOnly: Fuerza el cierre de todas las puertas
-		for door in start_room._container_doors.get_children():
+		for door in _container_doors.get_children():
 			door.close()
 		
 	

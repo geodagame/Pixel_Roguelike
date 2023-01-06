@@ -328,6 +328,7 @@ resource_local_to_scene = true
 7/z_index = 0
 
 [node name="Room" instance=ExtResource( 2 )]
+position = Vector2( 44, -56 )
 
 [node name="TileMap" parent="Navigation2D" index="0"]
 tile_set = SubResource( 43 )

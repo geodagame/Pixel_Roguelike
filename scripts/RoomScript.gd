@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_data = {"Enemy" : preload("res://Scenes/Base_Enemy.tscn"),
+var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Base_Enemy.tscn"),
 	"TestMonster" : preload("res://Scenes/Enemies/TestMonster.tscn")}
 var num_enemies
 
@@ -42,6 +42,7 @@ func _initialize_room():
 	for door in _container_doors.get_children():
 		door.close();
 		
+# warning-ignore:unused_argument
 func _on_PlayerDetector_area_entered(area):
 	_initialize_room()
 
