@@ -1,3 +1,3 @@
 extends Node
 
-class_name Pocimas,"res://Sprites/Items/pocion.png"
+class_name Pociones,"res://Sprites/Items/pocion.png"
