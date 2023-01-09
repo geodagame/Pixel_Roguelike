@@ -513,13 +513,13 @@ cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 bake_navigation = true
 format = 1
 
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource( 3 )]
+position = Vector2( 190, 82 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 59, 71 )
 
 [node name="enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 319, 205 )
-
-[node name="Doors" type="Node2D" parent="."]
-
-[node name="Door" parent="Doors" instance=ExtResource( 3 )]
-position = Vector2( 190, 82 )

@@ -9,6 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
+<<<<<<< HEAD
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -22,6 +23,33 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Enemy": "res://Sprites/Enemies/Enemy.png",
 "State_Machine": ""
+=======
+"base": "Node",
+"class": "Armaduras",
+"language": "GDScript",
+"path": "res://Scripts/Armaduras.gd"
+}, {
+"base": "Node",
+"class": "Armas",
+"language": "GDScript",
+"path": "res://Scripts/Armas.gd"
+}, {
+"base": "Node",
+"class": "Inventario",
+"language": "GDScript",
+"path": "res://Scripts/inventario.gd"
+}, {
+"base": "Node",
+"class": "Pocimas",
+"language": "GDScript",
+"path": "res://Scripts/Pocimas.gd"
+} ]
+_global_script_class_icons={
+"Armaduras": "res://Sprites/Items/Armadura.png",
+"Armas": "res://Sprites/Items/espada.png",
+"Inventario": "",
+"Pocimas": "res://Sprites/Items/pocion.png"
+>>>>>>> f0bbe6cc125dc5e2c66a749380e1c3c700063d0c
 }
 
 [application]
