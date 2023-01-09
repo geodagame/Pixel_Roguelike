@@ -1,35 +1,27 @@
 extends KinematicBody2D
+class_name Enemy, "res://Sprites/Enemies/Enemy.png"
 
-## Variables
+# ---- Variables
 
-var Player = null
-var Movement = Vector2.ZERO
-var Speed = 100
+	#Movimiento
+const FRICTION = 100
+export(int) var acceleration = 100
+export(int) var MAX_SPEED = 500
 
-## Codigo para que nos siga el enemigo
+	#Pathfinding
+var path = [];
 
-func _physics_process(_delta):
-	
-	Movement = Vector2.ZERO
-	
-	if Player != null:
-		Movement = position.direction_to(Player.position)
-	else:
-		Movement = Vector2.ZERO
-	
-	Movement = Movement.normalized() * Speed
-	Movement = move_and_slide(Movement)
+	#Nodos hijos y padres
+onready var parent = get_parent()
+onready var state_machine = $State_Machine
+onready var timer = $PathTimer
 
-## codigos que detecta cuando el jugador entra o sale de la vista del enemigo
+# ---- Estados
 
-func _on_Area2D_body_entered(body):
-	
-	if body != self:
-		Player = body
+func chase():
+	pass
 
-func _on_Area2D_body_exited(_body):
-	
-	Player = null
+# ---- Codigos que detecta cuando el jugador entra o sale de la vista del enemigo
 
 
 

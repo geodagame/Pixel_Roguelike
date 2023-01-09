@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/Enemy.gd"
+}, {
+"base": "Node",
+"class": "State_Machine",
+"language": "GDScript",
+"path": "res://State_Machine.gd"
+} ]
+_global_script_class_icons={
+"Enemy": "res://Sprites/Enemies/Enemy.png",
+"State_Machine": ""
+}
+
 [application]
 
 config/name="Pixel_Roguelike"
