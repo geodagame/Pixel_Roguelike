@@ -20,7 +20,7 @@ animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Down",
-"speed": 5.0
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -60,7 +60,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "walk"
-length = 0.3
 loop = true
 step = 0.01
 tracks/0/type = "value"
@@ -70,7 +69,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 2 ]
