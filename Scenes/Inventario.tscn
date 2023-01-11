@@ -1,6 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/inventario.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=3]
+script/source = "extends Control
+
+onready var Inv = $Inventario
+#la variable Inv es el inventario
+
+func _on_SalirInv_button_up():
+	Inv.visible = !Inv.visible
+	
+	if Inv.visible:
+		get_tree().paused =true
+#este codigo es para que cuando Inv sea visible se pause el juego
+	else:
+		get_tree().paused = false
+#y al contrario del anterior este codigo hace que cuando Inv sea invisible despause el juego
+
+"
 
 [sub_resource type="InputEventAction" id=1]
 action = "menu"
@@ -9,9 +25,10 @@ action = "menu"
 shortcut = SubResource( 1 )
 
 [node name="Inventory" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = SubResource( 3 )
 
 [node name="Equipado" type="Panel" parent="."]
 margin_left = 132.0
