@@ -6,7 +6,8 @@ var previous_state: int = -1 # -1 significa "Ningun estado o nulo"
 var state: int = -1 setget set_state
 
 onready var parent = get_parent()
-onready var animation_player = parent.get_node("AnimationPlayer")
+#onready var animation_player = parent.get_node("AnimationPlayer")
+
 
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		_state_logic(delta)
 		
 		#Si el _get_transition devuelve otro estado, se cambia aquí
-		var transition: int = _get_transition()
+		var transition = _get_transition()
 		if transition != -1:
 			set_state(transition)
 

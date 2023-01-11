@@ -1,11 +1,12 @@
 extends Node2D
 
-var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Base_Enemy.tscn")}
+var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/TestEnemy.tscn")}
 var num_enemies
 
 onready var _container_doors = $Doors
 onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
+onready var player = $Player
 
 func _ready():
 	# Cuenta la cantidad de Position2D en EnemyPosition
