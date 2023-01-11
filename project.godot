@@ -37,7 +37,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armaduras": "res://Sprites/Items/Armadura.png",
 "Armas": "res://Sprites/Items/espada.png",
+<<<<<<< HEAD
 "Enemy": "res://Sprites/Enemies/Enemy.png",
+=======
+"Enemy": "",
+>>>>>>> 9861d4f4ffa60eb1f2e4f491561933d851c2c56d
 "Pociones": "res://Sprites/Items/pocion.png",
 "State_Machine": ""
 }
