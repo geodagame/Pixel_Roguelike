@@ -34,9 +34,13 @@ frames = SubResource( 3 )
 shape = SubResource( 1 )
 
 [node name="PathTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 20.0
+path_max_distance = 20.0
+avoidance_enabled = true
 
 [connection signal="timeout" from="PathTimer" to="." method="_on_PathTimer_timeout"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_velocity_computed"]

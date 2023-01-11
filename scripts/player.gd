@@ -1,47 +1,64 @@
 extends KinematicBody2D
-##variables de movimiento, velocidad y direccion
 
+
+# ---- Variables
+
+	# Movimiento
 var Pixeles_por_metro : int = 35
-var direction : Vector2
+var mov_direction : Vector2
 var velocidad : Vector2
-var rapidez : float = 1 * Pixeles_por_metro
-var normalized = direction.normalized()
+var acceleration : float = 1 * Pixeles_por_metro
 
+	# Stats
+export var max_health = 10
+export var _base_attack = 1
+export var _base_defense = 1
+var health = max_health
+var defense = _base_defense
+var attack = _base_attack
 
+	# Hijos
 onready var animation = $AnimationPlayer
+ 
 
-func _ready():
-	print("ignorar") 
-
-##controles para el movimiento
+# ---- States
 
 func _input(_event):
-	normalized = direction.normalized()
-	direction = Vector2(0,0)
+	mov_direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_left"):
-		#animation.play("walk")
-		direction.x = -1
+		mov_direction.x = -1
 	if Input.is_action_pressed("ui_right"):
-		#animation.play("walk")
-		direction.x = 1
+		mov_direction.x = 1
 	if Input.is_action_pressed("ui_up"):
-		#animation.play("walk")
-		direction.y = -1
+		mov_direction.y = -1
 	if Input.is_action_pressed("ui_down"):
-		#animation.play("walk")
-		direction.y = 1
+		mov_direction.y = 1
 
-## velocidad de movimiento y tipo de movimiento
+# ---- Movimiento
 
-func _process(_delta):
-	velocidad.x = direction.x * rapidez
-	velocidad.y = direction.y * rapidez
-	
-	if velocidad != Vector2.ZERO:
-		animation.play("walk")
-	else:
-		animation.play("idle")
-	
+func move():
+	mov_direction = mov_direction.normalized()
+	velocidad = mov_direction * acceleration
+
+func _physics_process(_delta):
 	velocidad = move_and_slide(velocidad)
+	
+
+# ---- Vida
+
+func damage_player(damage):
+	# Función para quitarle vida al jugador
+	health -= (damage - defense)
+	if health <= 0:
+		health = 0
+		emit_signal("player_is_dead")
+
+func heal_player(value):
+	# Función para curar al jugador
+	health += value
+	if health > max_health:
+		health = max_health
+
+
 
 

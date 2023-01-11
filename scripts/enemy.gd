@@ -3,18 +3,23 @@ class_name Enemy, "res://Sprites/Enemies/Enemy.png"
 
 # ---- Variables
 
-	#Movimiento
+	# Movimiento
 const FRICTION = 0.15
-export(int) var acceleration = 40
-export(int) var max_speed = 100
+export(int) var acceleration = 10
+export(int) var max_speed = 50
 var mov_direction = Vector2.ZERO
 var velocidad = Vector2.ZERO
 
-	#Pathfinding
+	# Stats
+export var max_health = 1
+export var attack_value = 2
+export var defense_value = 1
+
+	# Pathfinding
 var path = [];
 export var _path_to_player := NodePath()
 
-	#Nodos hijos y padres
+	# Nodos hijos y padres
 onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
@@ -26,40 +31,36 @@ onready var _player = get_node(_path_to_player)
 
 func chase():
 	# Función básica de persecución
-	if path:
-		# Si hay un Path, guarda el siguiente punto al que ir
-		var vector_to_next_point = path[0] - global_position 
-		var distance_to_next_point = vector_to_next_point.length();
-		if distance_to_next_point < 1:
-			#Si la distancia al siguiente punto es menor a 1, borra el punto
-			path.remove(0);
-			if not path:
-				#Si no hay más puntos, detiene la función
-				return
-		
-		mov_direction = vector_to_next_point
+	_agent.set_target_location(_player.global_position)
 	
 
 # ---- Movimiento
 
 func _physics_process(_delta):
-	move()
-	# Move_and_slide no funciona fuera de _physics_process xd
+	#Pathfinding
+	if _agent.is_navigation_finished():
+		return
+	mov_direction = global_position.direction_to(_agent.get_next_location())
+	
 	velocidad = move_and_slide(velocidad)
 	velocidad = lerp(velocidad, Vector2.ZERO, FRICTION) #Reduce velocidad
-	
-	#Pathfinding
-	#mov_direction = global_position.direction_to(_agent.get_next_location())
-	
+
+
 func move():
 	#Actualiza la velocidad
 	mov_direction = mov_direction.normalized()
 	velocidad += mov_direction * acceleration
 	velocidad.limit_length(max_speed)
 
+func _on_NavigationAgent2D_velocity_computed(safe_velocity):
+	# Move_and_slide no funciona fuera de _physics_process xd
+	velocidad = move_and_slide(safe_velocity)
+	velocidad = lerp(velocidad, Vector2.ZERO, FRICTION) #Reduce velocidad
 # ---- Pathfinding
 
 func _on_PathTimer_timeout():
-	#path = Navigation2DServer.map_get_path(global_position, parent.player.position)
-	mov_direction = global_position.direction_to(_agent.get_next_location())
-	pass
+	chase()
+
+
+
+
