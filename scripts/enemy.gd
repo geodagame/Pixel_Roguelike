@@ -14,6 +14,13 @@ var velocidad = Vector2.ZERO
 export var max_health = 1
 export var attack_value = 2
 export var defense_value = 1
+var health = max_health
+
+
+	# Attack IA
+export(String) var _enemy_class = "Basic"
+export var _enemy_pattern = "Basic"
+
 
 	# Pathfinding
 var path = [];
@@ -24,14 +31,15 @@ onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
-onready var _player = get_node(_path_to_player)
+onready var _player_path = get_node(_path_to_player)
+var _player = null
 
 
 # ---- Estados
 
 func chase():
 	# Función básica de persecución
-	_agent.set_target_location(_player.global_position)
+	_agent.set_target_location(_player_path.global_position)
 	
 
 # ---- Movimiento
@@ -44,7 +52,6 @@ func _physics_process(_delta):
 	
 	velocidad = move_and_slide(velocidad)
 	velocidad = lerp(velocidad, Vector2.ZERO, FRICTION) #Reduce velocidad
-
 
 func move():
 	#Actualiza la velocidad
@@ -61,6 +68,24 @@ func _on_NavigationAgent2D_velocity_computed(safe_velocity):
 func _on_PathTimer_timeout():
 	chase()
 
+# ---- Ataques y patrones
 
 
 
+
+
+
+
+func _on_Hurtbox_area_entered(area):
+	health -= _player.player_attack
+	if health <= 0:
+		queue_free()
+
+
+func _on_PlayerDetector_body_entered(body):
+	_player = body
+
+
+func _on_Hitbox_area_entered(area):
+	_player.damage_player(attack_value)
+	_player.add_knokback(velocidad)
