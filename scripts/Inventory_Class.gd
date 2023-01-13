@@ -31,15 +31,30 @@ func add_equipable(item : Item):
 	emit_signal("Updateitem", index)
 	
 func equip_item(invindex,item,input):
-	var ItemEquip
+	var ItemEquip = Slot[invindex]
+	Slot[invindex] = item
+	emit_signal("Updateitem", invindex)
+	emit_signal("Updateitem", invindex, ItemEquip, input)
+	ItemEquip = null
 
+func item_info(index):
+	var item = Slot[index]
+	if item is Item:
+		emit_signal("Info", item.Item_name, item.description)
+	else:
+		emit_signal("Info", "vacio")
+	item = null
 
-
-
-
-
-
-
+func use_item(index):
+	if Slot[index] != null:
+		Slot[index].amount += -1
+		emit_signal("Useitem", index)
+		if Slot[index].amount <= 0:
+			remove_item(index)
+		
+func remove_item(index):
+	Slot[index] = null
+	emit_signal("Updateitem", index)
 
 
 

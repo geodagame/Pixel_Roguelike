@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/ItemClass.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Items/pocion.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+Item_name = "pocion de curacion"
+description = "una pocion hecha por un  antiguo alquimista te cura 20 hp"
+slot = 0
+Item_Tipe = 0
+value = 20
+ammount = 0
