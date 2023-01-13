@@ -14,8 +14,10 @@ export var max_health = 10
 export var _base_attack = 1
 export var _base_defense = 1
 var health = max_health
-var defense = _base_defense
-var attack = _base_attack
+var player_defense = _base_defense
+var player_attack = _base_attack
+
+signal player_is_dead
 
 	# Hijos
 onready var animation = $AnimationPlayer
@@ -44,21 +46,26 @@ func _physics_process(_delta):
 	velocidad = move_and_slide(velocidad)
 	
 
+func add_knokback(value):
+	velocidad = value * acceleration
+
 # ---- Vida
 
 func damage_player(damage):
 	# Función para quitarle vida al jugador
-	health -= (damage - defense)
+	health -= (damage - player_defense)
+	print(health)
 	if health <= 0:
 		health = 0
 		emit_signal("player_is_dead")
+		#queue_free()
 
 func heal_player(value):
 	# Función para curar al jugador
 	health += value
 	if health > max_health:
 		health = max_health
-
+		
 
 
 

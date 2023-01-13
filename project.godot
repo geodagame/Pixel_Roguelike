@@ -120,6 +120,20 @@ menu={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Mundo"
+2d_render/layer_2="Player Hitbox"
+2d_render/layer_3="Enemy Hitbox"
+2d_physics/layer_1="Mundo"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Player Hurtbox"
+2d_physics/layer_4="Enemy Hurtbox"
+2d_physics/layer_5="Enemy"
+2d_navigation/layer_1="Mundo"
+2d_navigation/layer_2="Player Hitbox"
+2d_navigation/layer_3="Enemy Hitbox"
+
 [physics]
 
 common/enable_pause_aware_picking=true
