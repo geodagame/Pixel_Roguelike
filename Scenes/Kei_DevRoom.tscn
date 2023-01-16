@@ -1,7 +1,6 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Kei_Main.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
 
@@ -328,21 +327,22 @@ resource_local_to_scene = true
 7/z_index = 0
 
 [node name="Kei_DevRoom" type="Node2D"]
-script = ExtResource( 2 )
 
-[node name="StartRoom01" parent="." instance=ExtResource( 1 )]
+[node name="MainRoom" parent="." instance=ExtResource( 1 )]
 position = Vector2( 147, 121 )
 
-[node name="TileMap" parent="StartRoom01/Navigation2D" index="0"]
+[node name="TileMap" parent="MainRoom/Navigation2D" index="0"]
 tile_set = SubResource( 43 )
 
-[node name="Position2D" parent="StartRoom01/EnemyPosition" index="0"]
+[node name="Position2D" parent="MainRoom/EnemyPosition" index="0"]
 position = Vector2( -68, 21 )
 
-[node name="CollisionShape2D" parent="StartRoom01/PlayerDetector" index="0"]
+[node name="PlayerDetector" parent="MainRoom" index="4"]
+position = Vector2( 0, 8 )
+
+[node name="CollisionShape2D" parent="MainRoom/PlayerDetector" index="0"]
 position = Vector2( 0, -9.25 )
 
-[node name="PlayerSpawn" parent="StartRoom01" index="5"]
-position = Vector2( -24, 43 )
+[connection signal="body_entered" from="MainRoom/PlayerDetector" to="MainRoom" method="_on_PlayerDetector_body_entered"]
 
-[editable path="StartRoom01"]
+[editable path="MainRoom"]

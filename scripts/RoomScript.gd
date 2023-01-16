@@ -6,17 +6,18 @@ var num_enemies
 onready var _container_doors = $Doors
 onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
-onready var player = $Player
- 
+var _player
 func _ready():
-	player.connect("player_is_dead", self, "game_over")
-	# Cuenta la cantidad de Position2D en EnemyPosition
+		# -- Debug --
+	#GameManager.game_start() 
 	
+		# Ready
+
+	
+		# Cuenta la cantidad de Position2D en EnemyPosition
 	num_enemies = _container_enemyPosition.get_child_count();
 	
 
-func game_over():
-	print("Game Over");
 
 func _on_enemy_killed():
 	# Lleva registro de la cantidad de enemigos vivos.
@@ -47,8 +48,12 @@ func _initialize_room():
 	for door in _container_doors.get_children():
 		door.close();
 		
-# warning-ignore:unused_argument
-func _on_PlayerDetector_area_entered(area):
-	_initialize_room()
 
+func _on_PlayerDetector_body_entered(body):
+	if GameManager.player_exists == false: return 
+	if body == DebugMode.current_room.get_node("Player"):
+		_initialize_room()
 #---------------------------------------------------
+
+
+

@@ -28,7 +28,7 @@ func damage_player(damage):
 	print(_player); # Debug
 	if health <= 0 and _player:
 		health = 0
-		_player.emit_signal("player_is_dead")
+		GameManager.game_over();
 		#_player.queue_free() # Bugged
 		
 
