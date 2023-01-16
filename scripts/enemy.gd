@@ -31,8 +31,14 @@ onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
+<<<<<<< HEAD
 var _player_path
 var _player
+=======
+onready var _player_path = get_node(_path_to_player)
+var _player = null
+
+>>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
 
 func _ready():
 	if GameManager.player_exists:
@@ -47,9 +53,13 @@ func _ready():
 
 func chase():
 	# Función básica de persecución
+<<<<<<< HEAD
 	if GameManager.player_exists:
 		#_agent.set_target_location(_player_path.global_position)
 		pass
+=======
+	_agent.set_target_location(_player_path.global_position)
+>>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
 	
 
 # ---- Movimiento
@@ -81,7 +91,7 @@ func _on_PathTimer_timeout():
 # ---- Ataques y patrones
 
 func _on_Hurtbox_area_entered(area):
-	health -= PlayerManager.player_attack
+	health -= _player.player_attack
 	if health <= 0:
 		queue_free()
 
@@ -91,5 +101,5 @@ func _on_PlayerDetector_body_entered(body):
 
 
 func _on_Hitbox_area_entered(area):
-	PlayerManager.damage_player(attack_value)
-	PlayerManager.add_knokback(velocidad)
+	_player.damage_player(attack_value)
+	_player.add_knokback(velocidad)
