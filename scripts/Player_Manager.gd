@@ -53,4 +53,4 @@ func _ready():
 	var _Equip = SwordInv.connect("Equipitem", self, "Equiped")
 
 func equioed(_index, item, buttom : int):
-	weapon[buttom] = item
+	weapons[buttom] = item

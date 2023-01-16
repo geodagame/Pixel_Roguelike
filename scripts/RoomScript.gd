@@ -8,24 +8,14 @@ onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
 var _player
 func _ready():
-<<<<<<< HEAD
 		# -- Debug --
 	#GameManager.game_start() 
-=======
-	# Cuenta la cantidad de Position2D en EnemyPosition
->>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
-	
+
 		# Ready
 
-	
 		# Cuenta la cantidad de Position2D en EnemyPosition
 	num_enemies = _container_enemyPosition.get_child_count();
 	
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
 func _on_enemy_killed():
 	# Lleva registro de la cantidad de enemigos vivos.
 	

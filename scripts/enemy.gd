@@ -31,14 +31,8 @@ onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
-<<<<<<< HEAD
 var _player_path
 var _player
-=======
-onready var _player_path = get_node(_path_to_player)
-var _player = null
-
->>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
 
 func _ready():
 	if GameManager.player_exists:
@@ -53,14 +47,10 @@ func _ready():
 
 func chase():
 	# Función básica de persecución
-<<<<<<< HEAD
 	if GameManager.player_exists:
 		#_agent.set_target_location(_player_path.global_position)
 		pass
-=======
-	_agent.set_target_location(_player_path.global_position)
->>>>>>> 29ee2f3f1293441997b10a7b4532de8bed7c02e6
-	
+
 
 # ---- Movimiento
 
