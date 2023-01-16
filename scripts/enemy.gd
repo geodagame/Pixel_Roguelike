@@ -32,14 +32,15 @@ onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
 onready var _player_path = get_node(_path_to_player)
-var _player = null
+onready var _player = get_tree().current_scene.get_node("Player")
 
 
 # ---- Estados
 
 func chase():
 	# Función básica de persecución
-	_agent.set_target_location(_player_path.global_position)
+	if _player:
+		_agent.set_target_location(_player_path.global_position)
 	
 
 # ---- Movimiento
@@ -77,7 +78,7 @@ func _on_PathTimer_timeout():
 
 
 func _on_Hurtbox_area_entered(area):
-	health -= _player.player_attack
+	health -= PlayerManager.player_attack
 	if health <= 0:
 		queue_free()
 
@@ -87,5 +88,5 @@ func _on_PlayerDetector_body_entered(body):
 
 
 func _on_Hitbox_area_entered(area):
-	_player.damage_player(attack_value)
-	_player.add_knokback(velocidad)
+	PlayerManager.damage_player(attack_value)
+	PlayerManager.add_knokback(velocidad)
