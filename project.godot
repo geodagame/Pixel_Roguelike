@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/enemy.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
@@ -119,20 +119,6 @@ menu={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[layer_names]
-
-2d_render/layer_1="Mundo"
-2d_render/layer_2="Player Hitbox"
-2d_render/layer_3="Enemy Hitbox"
-2d_physics/layer_1="Mundo"
-2d_physics/layer_2="Player"
-2d_physics/layer_3="Player Hurtbox"
-2d_physics/layer_4="Enemy Hurtbox"
-2d_physics/layer_5="Enemy"
-2d_navigation/layer_1="Mundo"
-2d_navigation/layer_2="Player Hitbox"
-2d_navigation/layer_3="Enemy Hitbox"
 
 [physics]
 
