@@ -60,6 +60,10 @@ config/name="Pixel_Roguelike"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerManager="*res://Scripts/Player_Manager.gd"
+
 [display]
 
 window/size/width=360

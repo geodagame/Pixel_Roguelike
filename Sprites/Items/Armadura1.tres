@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
-Item_name = "armadura novato"
-description = "una armadura hecha para novatos"
+Item_name = "Armadura de Novato"
+description = "Una armadura hecha para novatos."
 slot = 0
 Item_Tipe = 2
 value = 5
