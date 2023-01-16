@@ -40,3 +40,17 @@ func heal_player(value):
 
 func add_knokback(value):
 	_player.velocidad = value * _player.acceleration
+
+var PotionInv = preload("res://Sprites/Items/Inventario de pocimas.tres")
+var ArmorInv = preload("res://Sprites/Items/Inventario de armaduras.tres")
+var SwordInv = preload("res://Sprites/Items/Inventario de armas.tres")
+
+var weapons : Array = [null, null]
+
+var money : int
+
+func _ready():
+	var _Equip = SwordInv.connect("Equipitem", self, "Equiped")
+
+func equioed(_index, item, buttom : int):
+	weapon[buttom] = item

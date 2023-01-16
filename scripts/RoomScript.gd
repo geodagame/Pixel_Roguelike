@@ -9,15 +9,10 @@ onready var playerDetector = $PlayerDetector
 onready var player = $Player
  
 func _ready():
-	player.connect("player_is_dead", self, "game_over")
 	# Cuenta la cantidad de Position2D en EnemyPosition
 	
 	num_enemies = _container_enemyPosition.get_child_count();
 	
-
-func game_over():
-	print("Game Over");
-
 func _on_enemy_killed():
 	# Lleva registro de la cantidad de enemigos vivos.
 	
