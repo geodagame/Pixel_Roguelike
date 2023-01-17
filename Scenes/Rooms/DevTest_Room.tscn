@@ -338,7 +338,6 @@ tile_data = PoolIntArray( -262149, -536870903, 0, -262148, -536870903, 0, -26214
 position = Vector2( 292, 194 )
 acceleration = 4
 max_speed = 30
-_path_to_player = NodePath("../../Player")
 
 [node name="Door" parent="Doors" index="0"]
 position = Vector2( 65, 51 )

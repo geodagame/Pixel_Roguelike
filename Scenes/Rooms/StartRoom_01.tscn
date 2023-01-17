@@ -342,7 +342,6 @@ position = Vector2( 0, -56 )
 position = Vector2( -32, -32 )
 
 [node name="PlayerDetector" parent="." index="4"]
-position = Vector2( 0, 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -351,4 +350,4 @@ __meta__ = {
 shape = SubResource( 50 )
 
 [node name="PlayerSpawn" type="Position2D" parent="." index="5"]
-position = Vector2( -16, 17 )
+position = Vector2( -30, 40 )
