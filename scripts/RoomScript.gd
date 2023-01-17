@@ -6,7 +6,8 @@ var num_enemies
 onready var _container_doors = $Doors
 onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
-var _player
+
+
 func _ready():
 		# -- Debug --
 	#GameManager.game_start() 
@@ -48,7 +49,7 @@ func _initialize_room():
 
 func _on_PlayerDetector_body_entered(body):
 	if GameManager.player_exists == false: return 
-	if body == DebugMode.current_room.get_node("Player"):
+	if body == GameManager.get_player_node("RoomScript"):
 		_initialize_room()
 #---------------------------------------------------
 
