@@ -8,8 +8,7 @@ onready var _container_doors = current_room.get_node("Doors")
 onready var player_spawn
 
 	# Controladores
-var player = preload("res://Scenes/Player.tscn")
-var _player = player.instance() 
+var _player = GameManager.get_player_node("DebugMode")
 
 # ---- Funciones
 
@@ -25,6 +24,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		#DevOnly: Inicia el juego
 		if GameManager.game_has_started == false:
+			GameManager.create_player(current_room)
 			if player_spawn: #Evita que crashee si no hay PlayerSpawn
 				# --- Debug ---
 				print("Creando Player")
@@ -32,9 +32,8 @@ func _process(_delta):
 				print("Posición de Spawn: " + str(player_spawn.position))
 				# ---- #
 				
-				_player.global_position = player_spawn.position
-				current_room.call_deferred("add_child", _player)
-				GameManager.player_exists = true
+				_player.position = player_spawn.position
+				
 			#current_room._initialize_room();
 			GameManager.game_has_started = true
 	

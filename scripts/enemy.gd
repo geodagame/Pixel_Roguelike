@@ -35,20 +35,48 @@ onready var _player_path = get_node(_path_to_player)
 var _player = null
 
 
+<<<<<<< HEAD
+=======
+func _ready():
+	_agent.set_navigation(DebugMode.current_room.get_node("Navigation2D"))
+	if GameManager.player_exists:
+		_player = GameManager.get_player_node("Enemy")
+		print("Player Spotted by enemy")
+		print(_player)
+		_path_to_player = self.get_path_to(_player)
+		_player_path = get_node(_path_to_player)
+		print(_path_to_player)
+		print(_player_path)
+>>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 # ---- Estados
 
 func chase():
 	# Función básica de persecución
+<<<<<<< HEAD
 	_agent.set_target_location(_player_path.global_position)
 	
+=======
+	if GameManager.player_exists:
+		# -- Debug --
+		print("Chase Working") 
+		print(_player_path.global_position)
+		print(_player_path.position)
+		# ----
+		_agent.set_target_location(_player_path.position)
+		print("Next Location: " + str(_agent.get_next_location()))
+
+
+>>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 
 # ---- Movimiento
 
 func _physics_process(_delta):
 	#Pathfinding
 	if _agent.is_navigation_finished():
+		print("Debug: Navigation Finished of " + str(self))
 		return
-	mov_direction = global_position.direction_to(_agent.get_next_location())
+		
+	mov_direction = position.direction_to(_agent.get_next_location())
 	
 	velocidad = move_and_slide(velocidad)
 	velocidad = lerp(velocidad, Vector2.ZERO, FRICTION) #Reduce velocidad
@@ -56,7 +84,7 @@ func _physics_process(_delta):
 func move():
 	#Actualiza la velocidad
 	mov_direction = mov_direction.normalized()
-	velocidad += mov_direction * acceleration
+	velocidad += mov_direction * (acceleration * 0.5)
 	velocidad.limit_length(max_speed)
 
 func _on_NavigationAgent2D_velocity_computed(safe_velocity):
@@ -70,6 +98,7 @@ func _on_PathTimer_timeout():
 
 # ---- Ataques y patrones
 
+<<<<<<< HEAD
 
 
 
@@ -77,6 +106,9 @@ func _on_PathTimer_timeout():
 
 
 func _on_Hurtbox_area_entered(area):
+=======
+func _on_Hurtbox_area_entered(_area):
+>>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 	health -= _player.player_attack
 	if health <= 0:
 		queue_free()
@@ -86,6 +118,6 @@ func _on_PlayerDetector_body_entered(body):
 	_player = body
 
 
-func _on_Hitbox_area_entered(area):
-	_player.damage_player(attack_value)
-	_player.add_knokback(velocidad)
+func _on_Hitbox_area_entered(_area):
+	PlayerManager.damage_player(attack_value)
+	PlayerManager.add_knokback(velocidad)

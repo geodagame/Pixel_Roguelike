@@ -6,8 +6,13 @@ var num_enemies
 onready var _container_doors = $Doors
 onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
+<<<<<<< HEAD
 onready var player = $Player
  
+=======
+
+
+>>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 func _ready():
 	# Cuenta la cantidad de Position2D en EnemyPosition
 	
@@ -46,4 +51,11 @@ func _initialize_room():
 func _on_PlayerDetector_area_entered(area):
 	_initialize_room()
 
+<<<<<<< HEAD
+=======
+func _on_PlayerDetector_body_entered(body):
+	if GameManager.player_exists == false: return 
+	if body == GameManager.get_player_node("RoomScript"):
+		_initialize_room()
+>>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 #---------------------------------------------------

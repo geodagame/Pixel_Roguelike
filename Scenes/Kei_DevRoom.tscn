@@ -343,6 +343,9 @@ position = Vector2( 0, 8 )
 [node name="CollisionShape2D" parent="MainRoom/PlayerDetector" index="0"]
 position = Vector2( 0, -9.25 )
 
+[node name="PlayerSpawn" parent="MainRoom" index="5"]
+position = Vector2( -25, -35 )
+
 [connection signal="body_entered" from="MainRoom/PlayerDetector" to="MainRoom" method="_on_PlayerDetector_body_entered"]
 
 [editable path="MainRoom"]
