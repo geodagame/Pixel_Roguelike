@@ -24,19 +24,16 @@ export var _enemy_pattern = "Basic"
 
 	# Pathfinding
 var path = [];
-<<<<<<< HEAD
 var _path_to_player
-=======
-export var _path_to_player := NodePath()
->>>>>>> 9063b4dbb0cb07b4aa046285247e2d34414cb4e6
+
 
 	# Nodos hijos y padres
 onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
-<<<<<<< HEAD
-var _player_path
-var _player
+onready var _agent = $NavigationAgent2D
+onready var _player_path = get_node(_path_to_player)
+var _player = null
 
 #func _ready():
 #	pass
@@ -57,45 +54,14 @@ var _player
 		
 		
 		
-=======
-onready var _agent = $NavigationAgent2D
-onready var _player_path = get_node(_path_to_player)
-var _player = null
 
 
-<<<<<<< HEAD
-=======
-func _ready():
-	_agent.set_navigation(DebugMode.current_room.get_node("Navigation2D"))
-	if GameManager.player_exists:
-		_player = GameManager.get_player_node("Enemy")
-		print("Player Spotted by enemy")
-		print(_player)
-		_path_to_player = self.get_path_to(_player)
-		_player_path = get_node(_path_to_player)
-		print(_path_to_player)
-		print(_player_path)
->>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 # ---- Estados
 
 func chase():
 	# Función básica de persecución
-<<<<<<< HEAD
 	_agent.set_target_location(_player_path.global_position)
-	
-=======
-	if GameManager.player_exists:
-		# -- Debug --
-		print("Chase Working") 
-		print(_player_path.global_position)
-		print(_player_path.position)
-		# ----
-		_agent.set_target_location(_player_path.position)
-		print("Next Location: " + str(_agent.get_next_location()))
->>>>>>> 9063b4dbb0cb07b4aa046285247e2d34414cb4e6
 
-
->>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 
 # ---- Movimiento
 
@@ -133,17 +99,7 @@ func _on_PathTimer_timeout():
 
 # ---- Ataques y patrones
 
-<<<<<<< HEAD
-
-
-
-
-
-
-func _on_Hurtbox_area_entered(area):
-=======
 func _on_Hurtbox_area_entered(_area):
->>>>>>> d0312b38253c1cf5c172ff7caaa29407e767424a
 	health -= _player.player_attack
 	if health <= 0:
 		queue_free()
