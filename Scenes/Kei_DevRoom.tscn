@@ -1,14 +1,8 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
-
-[sub_resource type="NavigationPolygon" id=44]
-vertices = PoolVector2Array( 48, -15, 64, -16, 64, 0, -64, 32, 80, 0, 81, 32, 64, 32, -48, -16, -48, -48, 48, -48, 64, 48, -64, 48, -64, 0, -80, 32, -80, 0, -64, -16 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 2 ), PoolIntArray( 7, 8, 9, 0 ), PoolIntArray( 6, 10, 11, 3 ), PoolIntArray( 2, 6, 3 ), PoolIntArray( 7, 0, 3, 12 ), PoolIntArray( 3, 13, 14, 12 ), PoolIntArray( 7, 12, 15 ) ]
-outlines = [ PoolVector2Array( -48, -48, 48, -48, 48, -15, 64, -16, 64, 0, 80, 0, 81, 32, 64, 32, 64, 48, -64, 48, -64, 32, -80, 32, -80, 0, -64, 0, -64, -16, -48, -16 ) ]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -337,20 +331,14 @@ resource_local_to_scene = true
 [node name="MainRoom" parent="." instance=ExtResource( 1 )]
 position = Vector2( 147, 121 )
 
-[node name="Enemy" parent="MainRoom" instance=ExtResource( 2 )]
-motion/sync_to_physics = true
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="MainRoom/Navigation2D" index="0"]
-navpoly = SubResource( 44 )
-
-[node name="TileMap" parent="MainRoom/Navigation2D" index="1"]
+[node name="TileMap" parent="MainRoom/Navigation2D" index="0"]
 tile_set = SubResource( 43 )
+
+[node name="PlayerSpawn" parent="MainRoom" index="4"]
+position = Vector2( -25, -35 )
 
 [node name="Position2D" parent="MainRoom/EnemyPosition" index="0"]
 position = Vector2( -68, 21 )
-
-[node name="PlayerSpawn" parent="MainRoom" index="5"]
-position = Vector2( -25, -35 )
 
 [node name="PlayerDetector" parent="MainRoom" index="6"]
 position = Vector2( 0, 8 )
