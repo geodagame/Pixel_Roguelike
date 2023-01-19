@@ -55,6 +55,7 @@ text = "X
 "
 
 [node name="Inventario" type="Panel" parent="."]
+visible = false
 margin_left = -2.0
 margin_top = 47.0
 margin_right = 358.0

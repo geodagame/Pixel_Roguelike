@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/enemy.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
@@ -47,7 +47,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armaduras": "res://Sprites/Items/Armadura.png",
 "Armas": "res://Sprites/Items/espada.png",
-"Enemy": "res://Sprites/Enemies/Enemy.png",
+"Enemy": "",
 "Inventory": "",
 "Item": "",
 "Pociones": "res://Sprites/Items/pocion.png",
@@ -62,9 +62,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameManager="*res://Scripts/Game_Manager.gd"
 PlayerManager="*res://Scripts/Player_Manager.gd"
-DebugMode="*res://Scripts/Dev_Only-DebugMode.gd"
 
 [display]
 
@@ -118,11 +116,6 @@ DevOnly_CloseDoors={
 DevOnly_SpawnEnemies={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777246,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
-}
-DevOnly_FullHeal={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777247,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 menu={
