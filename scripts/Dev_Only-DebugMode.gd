@@ -8,7 +8,7 @@ onready var _container_doors = current_room.get_node("Doors")
 onready var player_spawn
 
 	# Controladores
-var _player = GameManager.get_player_node("DebugMode")
+var _player 
 
 # ---- Funciones
 
