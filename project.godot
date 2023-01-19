@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/enemy.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
@@ -47,7 +47,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armaduras": "res://Sprites/Items/Armadura.png",
 "Armas": "res://Sprites/Items/espada.png",
-"Enemy": "res://Sprites/Enemies/Enemy.png",
+"Enemy": "",
 "Inventory": "",
 "Item": "",
 "Pociones": "res://Sprites/Items/pocion.png",
