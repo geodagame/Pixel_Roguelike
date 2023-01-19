@@ -1,10 +1,10 @@
 extends Node2D
 
-var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/TestEnemy.tscn")}
+var enemy_data = {"Enemy" : preload("res://Scenes/Enemies/Enemy.tscn")}
 var num_enemies
 
 onready var _container_doors = $Doors
-onready var _container_enemyPosition = $EnemyPosition
+onready var _container_enemyPosition = $Navigation2D/EnemyPosition
 onready var playerDetector = $PlayerDetector
 
 
