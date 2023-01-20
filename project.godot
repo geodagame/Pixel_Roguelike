@@ -62,8 +62,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameManager="*res://Scripts/Game_Manager.gd"
 PlayerManager="*res://Scripts/Player_Manager.gd"
+GameManager="*res://Scripts/Game_Manager.gd"
 DebugMode="*res://Scripts/Dev_Only-DebugMode.gd"
 
 [display]
@@ -120,14 +120,14 @@ DevOnly_SpawnEnemies={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777246,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-DevOnly_FullHeal={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777247,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
-}
 menu={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+DevOnly_FullHeal={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777247,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
