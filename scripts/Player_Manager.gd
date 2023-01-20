@@ -68,5 +68,5 @@ func add_knokback(value):
 
 # ---- Inventario
 
-func equioed(_index, item, buttom : int):
+func equiped(_index, item, buttom : int):
 	weapons[buttom] = item

@@ -1,6 +1,8 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Otros/equipable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Otros/usable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Dev_Only-DebugMode.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Inventario.tscn" type="PackedScene" id=6]
@@ -331,6 +333,12 @@ resource_local_to_scene = true
 [node name="JoeDevroom" type="Node2D"]
 position = Vector2( -4, -20 )
 script = ExtResource( 5 )
+
+[node name="equipable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291, 76 )
+
+[node name="usable" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57, 79 )
 
 [node name="MainRoom" parent="." instance=ExtResource( 7 )]
 position = Vector2( 175, 150 )
