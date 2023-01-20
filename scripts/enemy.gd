@@ -33,8 +33,7 @@ onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
-#onready var _player_path = get_node(_path_to_player)
-var _player = null
+onready var _line = $Line2D
 
 func chase():
 	# Función básica de persecución
@@ -50,12 +49,10 @@ func _physics_process(_delta):
 		print("Debug: Navigation Finished of " + str(self))
 		return
 	
-#	if Input.is_mouse_button_pressed(1):
-#		_agent.set_target_location(GameManager.get_player_node("Enemy").global_position)
-		#_agent.set_target_location(get_global_mouse_position())
 	var current_position = global_position
 	#print(current_position)
 	var target = _agent.get_next_location()
+	_line.add_point(target, 0)
 	#print(target)
 	mov_direction = current_position.direction_to(target)
 	if current_position.distance_to(_path_to_player[0]) < 2:
@@ -79,12 +76,10 @@ func _on_NavigationAgent2D_velocity_computed(safe_velocity):
 # ---- Pathfinding
 
 func _ready():
-	_path_to_player = Navigation2DServer.map_get_path(_agent.get_navigation_map(), global_position, GameManager.get_player_node("Enemy").global_position, false)
-	_path_to_player.remove(0)
-	next_point_vector = _path_to_player[0]
-	_agent.set_target_location(next_point_vector)
+	set_new_path()
 
 func set_new_path():
+	_line.clear_points()
 	_path_to_player = Navigation2DServer.map_get_path(_agent.get_navigation_map(), global_position, GameManager.get_player_node("Enemy").global_position, false)
 	_path_to_player.remove(0)
 	next_point_vector = _path_to_player[0]
@@ -98,13 +93,10 @@ func _on_PathTimer_timeout():
 # ---- Ataques y patrones
 
 func _on_Hurtbox_area_entered(_area):
-	health -= _player.player_attack
+	health -= PlayerManager.player_attack
 	if health <= 0:
 		queue_free()
 
-
-func _on_PlayerDetector_body_entered(body):
-	_player = body
 
 
 func _on_Hitbox_area_entered(_area):
