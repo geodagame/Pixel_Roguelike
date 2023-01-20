@@ -75,6 +75,10 @@ shape = SubResource( 5 )
 [node name="PathTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0 )
+width = 2.0
+
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_velocity_computed"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
