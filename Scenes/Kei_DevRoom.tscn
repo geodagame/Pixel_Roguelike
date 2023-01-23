@@ -346,6 +346,9 @@ position = Vector2( 0, 8 )
 [node name="CollisionShape2D" parent="MainRoom/PlayerDetector" index="0"]
 position = Vector2( 0, -9.25 )
 
+[node name="Line2D" type="Line2D" parent="MainRoom"]
+points = PoolVector2Array( -47, -121 )
+
 [connection signal="body_entered" from="MainRoom/PlayerDetector" to="MainRoom" method="_on_PlayerDetector_body_entered"]
 
 [editable path="MainRoom"]
