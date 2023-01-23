@@ -22,7 +22,7 @@ export (Array,Resource) var Slot = [
 
 #funcion para poder guardar y amontonar los items
 
-func add_usable(item : Item, amount : int):
+func add_usable(_item : Item, amount : int):
 	var index = Item.slot
 	if Slot[index] == null:
 		Slot[index] = Item
