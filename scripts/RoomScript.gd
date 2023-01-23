@@ -6,17 +6,8 @@ var num_enemies
 onready var _container_doors = $Doors
 onready var _container_enemyPosition = $EnemyPosition
 onready var playerDetector = $PlayerDetector
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
 onready var player = $Player
-=======
-onready var player = $Player
->>>>>>> df4deea81a3052e07de15726483591019acb003a
 
->>>>>>> 2f32c2f5f39faa0c6e0ad7ecaef65b6e0d48e9ff
- 
 func _ready():
 	# Cuenta la cantidad de Position2D en EnemyPosition
 	
