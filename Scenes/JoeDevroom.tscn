@@ -350,9 +350,9 @@ __meta__ = {
 tile_set = SubResource( 43 )
 
 [node name="Inventory" parent="." instance=ExtResource( 6 )]
-margin_left = 1.0
-margin_top = 4.0
-margin_right = 1.0
-margin_bottom = 4.0
+margin_left = 3.0
+margin_top = 20.0
+margin_right = 3.0
+margin_bottom = 20.0
 
 [editable path="MainRoom"]
