@@ -1,6 +1,4 @@
-extends Node
-
-class_name Pociones,"res://Sprites/Items/pocion.png"
+extends Item
 
 func EfectoPocion():
 	pass

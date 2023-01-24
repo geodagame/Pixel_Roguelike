@@ -4,3 +4,4 @@
 
 [node name="Poción" type="Node"]
 script = ExtResource( 1 )
+Item_name = "Heal"
