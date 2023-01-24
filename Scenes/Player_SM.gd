@@ -26,6 +26,14 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 	# Cambia la animación dependiendo el estado
 	match new_state:
 		states.Idle:
-			_animationplayer.play("idle")
+			match parent.orientation:
+				parent.ORIENTATION.DOWN:
+					_animationplayer.play("Idle_Down")
+				parent.ORIENTATION.SIDE:
+					_animationplayer.play("Idle_Side")
 		states.Walk:
-			_animationplayer.play("walk")
+			match parent.orientation:
+				parent.ORIENTATION.DOWN:
+					_animationplayer.play("Walk_Down")
+				parent.ORIENTATION.SIDE:
+					_animationplayer.play("Walk_Side")

@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/enemy.gd"
+"path": "res://Scripts/Enemy.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
