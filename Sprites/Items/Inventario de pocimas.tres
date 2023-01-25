@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-slot = [ null, null, null, null, null, null, null, null, null, null, null, null ]
+Inv_Slot = [ null, null, null, null, null, null, null, null, null, null, null, null ]
