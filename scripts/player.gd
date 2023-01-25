@@ -46,6 +46,7 @@ func _input(_event):
 		orientation = ORIENTATION.SIDE
 	if Input.is_action_pressed("ui_up"):
 		mov_direction.y = -1
+		orientation = ORIENTATION.UP
 	if Input.is_action_pressed("ui_down"):
 		mov_direction.y = 1
 		orientation = ORIENTATION.DOWN
@@ -80,6 +81,11 @@ func heal_player(value):
 	if health > max_health:
 		health = max_health
 		
+# ---- Ataque
+
+func attack():
+	# Ataca xd
+	pass
 
 
 

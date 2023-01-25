@@ -31,9 +31,17 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 					_animationplayer.play("Idle_Down")
 				parent.ORIENTATION.SIDE:
 					_animationplayer.play("Idle_Side")
+				parent.ORIENTATION.UP:
+					_animationplayer.play("Idle_Up")
 		states.Walk:
 			match parent.orientation:
 				parent.ORIENTATION.DOWN:
 					_animationplayer.play("Walk_Down")
 				parent.ORIENTATION.SIDE:
 					_animationplayer.play("Walk_Side")
+				parent.ORIENTATION.UP:
+					_animationplayer.play("Walk_Up")
+		states.Attack:
+			match parent.orientation:
+				parent.ORIENTATION.DOWN:
+					_animationplayer.play("Attack_Down")
