@@ -1,6 +1,5 @@
-extends Resource
-
 class_name Inventory
+extends Resource
 
 #se crean señales para poder hacer funcionar el codigo
 

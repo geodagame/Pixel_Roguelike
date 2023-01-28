@@ -9,35 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "Armaduras",
-"language": "GDScript",
-"path": "res://Scripts/Armaduras.gd"
-}, {
-"base": "Node",
-"class": "Armas",
-"language": "GDScript",
-"path": "res://Scripts/Armas.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/Scenes/enemy.gd"
+}, {
+"base": "Node",
+"class": "EnemyPathfinding",
+"language": "GDScript",
+"path": "res://Scripts/ClassAndNodes/enemy_pathfinding.gd"
 }, {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://Scripts/Inventory_Class.gd"
+"path": "res://Scripts/ClassAndNodes/inventory_class.gd"
 }, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Scripts/ItemClass.gd"
-}, {
-"base": "Node",
-"class": "Pociones",
-"language": "GDScript",
-"path": "res://Scripts/Pocimas.gd"
+"path": "res://Scripts/ClassAndNodes/item_class.gd"
 }, {
 "base": "Node",
 "class": "State_Machine",
@@ -45,12 +35,10 @@ _global_script_classes=[ {
 "path": "res://State_Machine.gd"
 } ]
 _global_script_class_icons={
-"Armaduras": "res://Sprites/Items/Armadura.png",
-"Armas": "res://Sprites/Items/espada.png",
 "Enemy": "res://Sprites/Enemies/Enemy.png",
+"EnemyPathfinding": "",
 "Inventory": "",
 "Item": "",
-"Pociones": "res://Sprites/Items/pocion.png",
 "State_Machine": ""
 }
 

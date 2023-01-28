@@ -1,5 +1,6 @@
-extends KinematicBody2D
 class_name Enemy, "res://Sprites/Enemies/Enemy.png"
+extends KinematicBody2D
+
 
 # ---- Variables
 

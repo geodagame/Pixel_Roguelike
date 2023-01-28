@@ -1,6 +1,6 @@
+class_name Item
 extends Resource
 
-class_name Item
 
 export(Texture) var texture
 export(String) var Item_name

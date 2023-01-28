@@ -5,8 +5,9 @@
 [ext_resource path="res://Scenes/Otros/usable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Dev_Only-DebugMode.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Inventario.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/_Nodes/inventory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
