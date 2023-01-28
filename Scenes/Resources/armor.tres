@@ -11,4 +11,4 @@ description = "Una armadura hecha para novatos."
 slot = 0
 Item_Tipe = 2
 value = 5
-ammount = 0
+amount = 0

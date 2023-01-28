@@ -4,7 +4,7 @@ extends Node
 
 var player_exists = false
 var game_has_started = false
-var player_preload = preload("res://Scenes/Player.tscn")
+var player_preload = preload("res://Scenes/_Nodes/player.tscn")
 var player_node 
 
 # ---- Funciones

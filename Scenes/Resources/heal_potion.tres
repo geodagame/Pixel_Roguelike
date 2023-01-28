@@ -11,4 +11,4 @@ description = "una pocion hecha por un  antiguo alquimista te cura 20 hp"
 slot = 0
 Item_Tipe = 0
 value = 20
-ammount = 0
+amount = 0

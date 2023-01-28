@@ -20,9 +20,9 @@ var player_attack = (_base_attack + weapon_attack_bonus) * effect_attack_bonus
 onready var _player
 
 	# Equipo
-var PotionInv = preload("res://Sprites/Items/Inventario de pocimas.tres")
-var ArmorInv = preload("res://Sprites/Items/Inventario de armaduras.tres")
-var SwordInv = preload("res://Sprites/Items/Inventario de armas.tres")
+var PotionInv = preload("res://Scenes/Resources/potion_inventory.tres")
+var ArmorInv = preload("res://Scenes/Resources/armor_inventory.tres")
+var SwordInv = preload("res://Scenes/Resources/weapon_inventory.tres")
 
 var weapons : Array = [null, null]
 
@@ -35,6 +35,7 @@ func _ready():
 		
 		# Equipo
 	var _Equip = SwordInv.connect("Equipitem", self, "Equiped")
+	var _update = PotionInv.connect("Updateitem", self, "update_item")
 
 # ---- Vida
 
@@ -70,3 +71,6 @@ func add_knokback(value):
 
 func equiped(_index, item, buttom : int):
 	weapons[buttom] = item
+
+func update_item(item_index):
+	pass

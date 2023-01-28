@@ -334,12 +334,6 @@ resource_local_to_scene = true
 position = Vector2( -4, -20 )
 script = ExtResource( 5 )
 
-[node name="equipable" parent="." instance=ExtResource( 2 )]
-position = Vector2( 291, 76 )
-
-[node name="usable" parent="." instance=ExtResource( 3 )]
-position = Vector2( 57, 79 )
-
 [node name="MainRoom" parent="." instance=ExtResource( 7 )]
 position = Vector2( 175, 150 )
 __meta__ = {
@@ -348,6 +342,15 @@ __meta__ = {
 
 [node name="TileMap" parent="MainRoom/Navigation2D" index="0"]
 tile_set = SubResource( 43 )
+
+[node name="CollisionShape2D" parent="MainRoom/PlayerDetector" index="0"]
+disabled = true
+
+[node name="usable" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144, 154 )
+
+[node name="equipable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291, 76 )
 
 [node name="Inventory" parent="." instance=ExtResource( 6 )]
 margin_left = 3.0
