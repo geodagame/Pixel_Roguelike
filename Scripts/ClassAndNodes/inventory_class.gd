@@ -24,9 +24,10 @@ func add_usable(item : Item, amount : int):
 	if Inv_Slot[index] == null:
 		Inv_Slot[index] = item
 		emit_signal("Updateitem", index)
-	if Inv_Slot[index] == item:
+	if Inv_Slot[index] is Item:
 		Inv_Slot[index].amount += amount
 		emit_signal("Updateitem", index)
+	print("Item Agregado")
 
 #funcion para añadir un item que no se puede amontonar
 

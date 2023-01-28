@@ -50,9 +50,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerManager="*res://Scripts/Player_Manager.gd"
-GameManager="*res://Scripts/Game_Manager.gd"
-DebugMode="*res://Scripts/Dev_Only-DebugMode.gd"
+PlayerManager="*res://Scripts/Autoload/Player_Manager.gd"
+GameManager="*res://Scripts/Autoload/Game_Manager.gd"
+DebugMode="*res://Scripts/Autoload/Dev_Only-DebugMode.gd"
 
 [display]
 

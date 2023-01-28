@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Scenes/usable.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Resources/heal_potion.tres" type="Resource" id=3]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.0
 height = 12.0
