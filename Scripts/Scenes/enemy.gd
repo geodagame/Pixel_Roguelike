@@ -1,6 +1,8 @@
 class_name Enemy, "res://Sprites/Enemies/Enemy.png"
 extends KinematicBody2D
-
+#
+# Main Enemy Script
+#
 
 # ---- Variables
 
@@ -10,38 +12,29 @@ export(int) var acceleration = 10
 export(int) var max_speed = 50
 var mov_direction = Vector2.ZERO
 var velocity = Vector2.ZERO
-
 	# Stats
 export var max_health = 1
 export var attack_value = 2
 export var defense_value = 1
 var health = max_health
-
-
 	# Attack IA
 export(String) var _enemy_class = "Basic"
 export var _enemy_pattern = "Basic"
-
-
 	# Pathfinding
 var next_point_vector
 var next_point_distance
 var _path_to_player
-
-
 	# Nodos hijos y padres
 onready var parent = get_parent()
 onready var state_machine = $State_Machine
 onready var timer = $PathTimer
 onready var _agent = $NavigationAgent2D
 
-func chase():
-	# Función básica de persecución
-	#_agent.set_target_location(_player_path.global_position)
-	pass
+# ---- Built-in
 
+func _ready():
+	set_new_path()
 
-# ---- Movimiento
 
 func _physics_process(_delta):
 	#Pathfinding
@@ -58,6 +51,8 @@ func _physics_process(_delta):
 		else:
 			set_new_path()
 
+# ---- Movimiento
+
 func move():
 	#Actualiza la velocidad
 	mov_direction = mov_direction.normalized()
@@ -65,14 +60,12 @@ func move():
 	velocity.limit_length(max_speed)
 	_agent.set_velocity(velocity)
 
+
 func _on_NavigationAgent2D_velocity_computed(safe_velocity):
 	velocity = move_and_slide(safe_velocity)
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION) #Reduce velocidad
-	
-# ---- Pathfinding
 
-func _ready():
-	set_new_path()
+# ---- Pathfinding
 
 func set_new_path():
 	_path_to_player = 0
@@ -80,6 +73,7 @@ func set_new_path():
 	_path_to_player.remove(0)
 	next_point_vector = _path_to_player[0]
 	_agent.set_target_location(next_point_vector)
+
 
 func _on_PathTimer_timeout():
 	#chase()
@@ -92,7 +86,6 @@ func _on_Hurtbox_area_entered(_area):
 	health -= PlayerManager.player_attack
 	if health <= 0:
 		queue_free()
-
 
 
 func _on_Hitbox_area_entered(_area):

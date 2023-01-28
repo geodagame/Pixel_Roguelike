@@ -30,7 +30,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/ClassAndNodes/item_class.gd"
 }, {
 "base": "Node",
-"class": "State_Machine",
+"class": "StateMachine",
 "language": "GDScript",
 "path": "res://State_Machine.gd"
 } ]
@@ -39,7 +39,7 @@ _global_script_class_icons={
 "EnemyPathfinding": "",
 "Inventory": "",
 "Item": "",
-"State_Machine": ""
+"StateMachine": ""
 }
 
 [application]

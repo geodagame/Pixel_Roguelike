@@ -1,4 +1,4 @@
-extends State_Machine
+extends StateMachine
 
 func _init():
 	_add_state("chase")

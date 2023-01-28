@@ -4,10 +4,8 @@ export(Resource) var item
 
 
 func _on_equipable_body_entered(body):
-	#indicamos que el cuerpo que tiene que entrar es player
-	if body .is_in_group("Player"):
-#indicamos que cuando el objeto sea recogido el slot no sea igual a null 
-		if item != null:
-#indicamos que el item en cuestion sea guardado en armorinv
+	if body .is_in_group("Player"): # Revisa que body = player
+		if item != null: # Revisa que el slot no sea igual a null
+			# Guarda el item en el ArmorInv
 			PlayerManager.ArmorInv.add_equipable(item)
 			queue_free()

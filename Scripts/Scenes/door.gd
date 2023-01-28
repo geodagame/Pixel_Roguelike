@@ -2,8 +2,7 @@ extends StaticBody2D
 
 
 var state = "close" #Para evitar que se abra la puerta cuando ya lo está
-
-onready var animationPlayer = $AnimationPlayer
+onready var _animation_player = $AnimationPlayer
 
 
 func _ready():
@@ -13,14 +12,14 @@ func _ready():
 func open():
 	#Abre la puerta
 	if state == "close":
-		animationPlayer.play("Open");
+		_animation_player.play("Open");
 		state = "open"
 
 
 func close():
 	#Cierra la puerta
 	if state == "open":
-		animationPlayer.play("Close");
+		_animation_player.play("Close");
 		state = "close"
 
 

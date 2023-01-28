@@ -1,5 +1,9 @@
+class_name StateMachine
 extends Node
-class_name State_Machine
+# State Machine Script
+# Para controlar los estados de enemigos, players, etc
+#
+
 
 var states: Dictionary = {}
 var previous_state: int = -1 # -1 significa "Ningun estado o nulo"

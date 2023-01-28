@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
-Item_name = "pocion de curacion"
+item_name = ""
 description = "una pocion hecha por un  antiguo alquimista te cura 20 hp"
 slot = 0
-Item_Tipe = 0
+item_tipe = 0
 value = 20
 amount = 0

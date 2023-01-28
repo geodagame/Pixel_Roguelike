@@ -20,22 +20,21 @@ var player_attack = (_base_attack + weapon_attack_bonus) * effect_attack_bonus
 onready var _player
 
 	# Equipo
-var PotionInv = preload("res://Scenes/Resources/potion_inventory.tres")
-var ArmorInv = preload("res://Scenes/Resources/armor_inventory.tres")
-var SwordInv = preload("res://Scenes/Resources/weapon_inventory.tres")
-
+const PotionInv = preload("res://Scenes/Resources/potion_inventory.tres")
+const ArmorInv = preload("res://Scenes/Resources/armor_inventory.tres")
+const SwordInv = preload("res://Scenes/Resources/weapon_inventory.tres")
 var weapons : Array = [null, null]
-
 var money : int
 
+# ---- Built In
 
 func _ready():
 	if GameManager.player_exists: 
 		_player = GameManager.get_player_node("PlayerManager")
 		
 		# Equipo
-	var _Equip = SwordInv.connect("Equipitem", self, "Equiped")
-	var _update = PotionInv.connect("Updateitem", self, "update_item")
+	var _Equip = SwordInv.connect("equip_item", self, "equiped")
+	var _update = PotionInv.connect("update_item", self, "update_item")
 
 # ---- Vida
 

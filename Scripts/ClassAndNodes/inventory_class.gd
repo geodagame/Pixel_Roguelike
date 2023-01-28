@@ -1,74 +1,69 @@
 class_name Inventory
 extends Resource
+# 
+# Clase de Inventario
+#
 
-#se crean señales para poder hacer funcionar el codigo
 
-signal Updateitem(index)
-signal Useitem(index)
-signal Equipitem(Invindex, item, imput)
-signal Info(Itemname,description)
+signal update_item(index)
+signal use_item(index)
+signal equip_item(inv_index, item, input)
+signal item_info(item_name, description)
 
-#se crean arrays que se exportaran como variable slot
-
-export (Array,Resource) var Inv_Slot = [
-	null, null, null, 
-	null, null, null,
-	null, null, null, 
-	null, null, null
+export (Array, Resource) var inv_slots = [
+	null, null, null, null,
 ]
 
-#funcion para poder guardar y amontonar los items
-
 func add_usable(item : Item, amount : int):
+	# Guarda items amontonables
 	var index = item.slot
-	if Inv_Slot[index] == null:
-		Inv_Slot[index] = item
-		emit_signal("Updateitem", index)
-	if Inv_Slot[index] is Item:
-		Inv_Slot[index].amount += amount
-		emit_signal("Updateitem", index)
-	print("Item Agregado")
+	if inv_slots[index] == null:
+		inv_slots[index] = item
+		emit_signal("update_item", index)
+	if inv_slots[index] is Item:
+		inv_slots[index].amount += amount
+		emit_signal("update_item", index)
 
-#funcion para añadir un item que no se puede amontonar
 
 func add_equipable(item : Item):
+	# Guarda items no amontonables
 	var index = item.find(null, 0)
-	Inv_Slot[index] = item
-	emit_signal("Updateitem", index)
+	inv_slots[index] = item
+	emit_signal("update_item", index)
 
-#funcion para equipar un item al jugador
 
-func equip_item(invindex,item,input):
-	var ItemEquip = Inv_Slot[invindex]
-	Inv_Slot[invindex] = item
-	emit_signal("Updateitem", invindex)
-	emit_signal("Updateitem", invindex, ItemEquip, input)
-	ItemEquip = null
+func equip_item(inv_index, item, input):
+	# Equipa un item
+	var item_to_equip = inv_slots[inv_index]
+	inv_slots[inv_index] = item
+	emit_signal("update_item", inv_index)
+	emit_signal("update_item", inv_index, item_to_equip, input)
+	item_to_equip = null
 
-#funcion para mostrar la informacion del item
 
 func item_info(index):
-	var item = Inv_Slot[index]
+	# Muestra información del Item
+	var item = inv_slots[index]
 	if item is Item:
-		emit_signal("Info", item.Item_name, item.description)
+		emit_signal("item_info", item.item_name, item.description)
 	else:
-		emit_signal("Info", "vacio")
+		emit_signal("item_info", "vacio")
 	item = null
 
-#funcion para usar un item
 
 func use_item(index):
-	if Inv_Slot[index] != null:
-		Inv_Slot[index].amount += -1
-		emit_signal("Useitem", index)
-		if Inv_Slot[index].amount <= 0:
+	# Usa un item
+	if inv_slots[index] != null:
+		inv_slots[index].amount += -1
+		emit_signal("use_item", index)
+		if inv_slots[index].amount <= 0:
 			remove_item(index)
 
-#funcion para remover un item del inventario
 
 func remove_item(index):
-	Inv_Slot[index] = null
-	emit_signal("Updateitem", index)
+	# Quita un item del inventario
+	inv_slots[index] = null
+	emit_signal("update_item", index)
 
 
 
