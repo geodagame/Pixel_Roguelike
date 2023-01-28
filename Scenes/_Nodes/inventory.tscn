@@ -3,7 +3,13 @@
 [ext_resource path="res://Sprites/Items/Inventario.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Items/Slots.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Slot.gd" type="Script" id=3]
+<<<<<<< HEAD
 [ext_resource path="res://Scripts/inventory.gd" type="Script" id=4]
+=======
+[ext_resource path="res://Scripts/ClassAndNodes/inventory_class.gd" type="Script" id=4]
+[ext_resource path="res://scripts/InvManager.gd" type="Script" id=5]
+>>>>>>> c8513e3442fa533fe6a8f50ec93b6ac3cbfa5a90
+
 
 [sub_resource type="InputEventAction" id=1]
 action = "menu"
