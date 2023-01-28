@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/ItemClass.gd"
 }, {
 "base": "Node",
+"class": "Pociones",
+"language": "GDScript",
+"path": "res://Scripts/Pocimas.gd"
+}, {
+"base": "Node",
 "class": "State_Machine",
 "language": "GDScript",
 "path": "res://State_Machine.gd"
@@ -45,6 +50,7 @@ _global_script_class_icons={
 "Enemy": "res://Sprites/Enemies/Enemy.png",
 "Inventory": "",
 "Item": "",
+"Pociones": "res://Sprites/Items/pocion.png",
 "State_Machine": ""
 }
 
