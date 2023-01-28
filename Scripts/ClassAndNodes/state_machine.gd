@@ -8,10 +8,7 @@ extends Node
 var states: Dictionary = {}
 var previous_state: int = -1 # -1 significa "Ningun estado o nulo"
 var state: int = -1 setget set_state
-
 onready var parent = get_parent()
-#onready var animation_player = parent.get_node("AnimationPlayer")
-
 
 
 func _physics_process(delta: float) -> void:

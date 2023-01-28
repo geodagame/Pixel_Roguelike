@@ -5,7 +5,6 @@ var num_enemies
 onready var _container_doors = $Doors
 onready var _container_enemy_position = $EnemyPosition
 onready var _player_detector = $PlayerDetector
-onready var player = $Player
 
 func _ready():
 	# Cuenta la cantidad de Position2D en EnemyPosition
@@ -25,7 +24,7 @@ func _spawn_monsters():
 	# Coloca un enemigo en cada Position2D
 	for enemy_position in _container_enemy_position.get_children():
 		var enemy = enemy_data["enemy"].instance()
-		enemy.connect("tree_exited", self, "on_enemy_killed")
+		enemy.connect("tree_exited", self, "_on_enemy_killed")
 		enemy.position = enemy_position.position
 		call_deferred("add_child", enemy)
 

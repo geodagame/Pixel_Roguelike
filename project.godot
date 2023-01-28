@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://State_Machine.gd"
+"path": "res://Scripts/ClassAndNodes/state_machine.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "res://Sprites/Enemies/Enemy.png",
@@ -50,9 +50,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerManager="*res://Scripts/Autoload/Player_Manager.gd"
-GameManager="*res://Scripts/Autoload/Game_Manager.gd"
-DebugMode="*res://Scripts/Autoload/Dev_Only-DebugMode.gd"
+PlayerManager="*res://Scripts/Autoload/player_manager.gd"
+GameManager="*res://Scripts/Autoload/game_manager.gd"
+DebugMode="*res://Scripts/Autoload/debug_helper.gd"
 
 [display]
 

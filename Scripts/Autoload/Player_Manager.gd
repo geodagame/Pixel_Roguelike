@@ -2,23 +2,21 @@ extends Node
 
 # ---- Variables
 
+signal player_died
 	# Bonuses
 var armor_defense_bonus = 0
 var weapon_attack_bonus = 0
 var effect_defense_bonus = 1
 var effect_attack_bonus = 1
-
 	# Stats
-export var max_health = 10
-export var _base_attack = 1
-export var _base_defense = 1
-var health = max_health
-var player_defense = (_base_defense + armor_defense_bonus) * effect_defense_bonus 
-var player_attack = (_base_attack + weapon_attack_bonus) * effect_attack_bonus
-
+const MAX_HEALTH = 10
+const BASE_ATTACK = 1
+const BASE_DEFENSE = 1
+var player_health = MAX_HEALTH
+var player_defense = (BASE_DEFENSE + armor_defense_bonus) * effect_defense_bonus 
+var player_attack = (BASE_ATTACK + weapon_attack_bonus) * effect_attack_bonus
 	# Hijos
 onready var _player
-
 	# Equipo
 const PotionInv = preload("res://Scenes/Resources/potion_inventory.tres")
 const ArmorInv = preload("res://Scenes/Resources/armor_inventory.tres")
@@ -43,24 +41,24 @@ func damage_player(damage):
 	if GameManager.player_exists == false: 
 		print("Error: damage_player no encontró jugador")
 		return
-	
-	health -= (damage - player_defense)
-	print(health) # Debug
-	print(_player); # Debug
-	if health <= 0 and _player:
-		health = 0
-		_player.emit_signal("player_is_dead")
+	player_health -= (damage - player_defense)
+	print("Vida: " + str(player_health)) # Debug
+	#print(_player); # Debug
+	if player_health <= 0 and _player:
+		player_health = 0
+		emit_signal("player_died")
 		#_player.queue_free() # Bugged
-		
+
 
 func heal_player(value):
 	# Función para curar al jugador
 	if GameManager.player_exists == false: 
 		print("Error: heal_player no encontró jugador")
 		return
-	health += value
-	if health > max_health:
-		health = max_health
+	player_health += value
+	if player_health > MAX_HEALTH:
+		player_health = MAX_HEALTH
+
 
 func add_knokback(value):
 	_player.velocidad = value * _player.acceleration
@@ -71,5 +69,6 @@ func add_knokback(value):
 func equiped(_index, item, buttom : int):
 	weapons[buttom] = item
 
-func update_item(item_index):
+
+func update_item(_item_index):
 	pass

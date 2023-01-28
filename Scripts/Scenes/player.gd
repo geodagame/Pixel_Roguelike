@@ -5,7 +5,6 @@ extends KinematicBody2D
 
 # ---- Variables
 
-signal player_is_dead
 	# Movimiento
 var _pixeles_por_metro : int = 35
 var mov_direction : Vector2

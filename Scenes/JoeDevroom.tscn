@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/_Nodes/equipable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/_Nodes/usable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Autoload/Dev_Only-DebugMode.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Autoload/debug_helper.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/_Nodes/inventory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=7]
 
