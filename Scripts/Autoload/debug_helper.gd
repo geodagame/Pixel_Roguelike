@@ -54,3 +54,5 @@ func _process(_delta):
 		#F4: Cura completamente al jugador
 		PlayerManager.heal_player(PlayerManager.max_health)
 		print("Jugador curado: " + PlayerManager.health)
+		
+
