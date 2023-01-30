@@ -22,7 +22,7 @@ func add_usable(item : Item, amount : int):
 		emit_signal("update_item", index)
 	if inv_slots[index] is Item:
 		inv_slots[index].amount += amount
-		emit_signal("update_item", index)
+#		emit_signal("update_item", index)
 
 
 func add_equipable(item : Item):
