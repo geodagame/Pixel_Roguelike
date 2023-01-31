@@ -8,7 +8,7 @@ extends Node2D
 
 var _player 
 onready var _player_spawn
-onready var _container_doors = GameManager.current_room.get_node("Doors")
+#onready var _container_doors = GameManager.current_room.get_node("Doors")
 
 # ---- Funciones
 
@@ -38,16 +38,16 @@ func _process(_delta):
 			GameManager.game_has_started = true
 	
 	
-	if Input.is_action_just_pressed("DevOnly_OpenDoors"):
+	#if Input.is_action_just_pressed("DevOnly_OpenDoors"):
 		#F1: Fuerza la apertura de todas las puertas
-		for door in _container_doors.get_children():
-			door.open()
+	#	for door in _container_doors.get_children():
+	#		door.open()
 	
 	
-	if Input.is_action_just_pressed("DevOnly_CloseDoors"):
-		#F2: Fuerza el cierre de todas las puertas
-		for door in _container_doors.get_children():
-			door.close()
+	#if Input.is_action_just_pressed("DevOnly_CloseDoors"):
+	#	#F2: Fuerza el cierre de todas las puertas
+	#	for door in _container_doors.get_children():
+	#		door.close()
 		
 		
 	if Input.is_action_just_pressed("DevOnly_FullHeal"):

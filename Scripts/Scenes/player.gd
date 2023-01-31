@@ -6,7 +6,7 @@ extends KinematicBody2D
 # ---- Variables
 
 	# Movimiento
-var _pixeles_por_metro : int = 35
+var _pixeles_por_metro : int = 50
 var mov_direction : Vector2
 var velocidad : Vector2
 var acceleration : float = 1 * _pixeles_por_metro

@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/game_control.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Dungeon.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Rooms/FloorTiles.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=5]
 
@@ -10,6 +11,328 @@ action = "ui_cancel"
 
 [sub_resource type="ShortCut" id=45]
 shortcut = SubResource( 44 )
+
+[sub_resource type="NavigationPolygon" id=88]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=89]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=46]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=47]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=48]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=49]
+vertices = PoolVector2Array( 0, 0, 112, 0, 112, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 112, 0, 112, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=50]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=85]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=86]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=53]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=54]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=55]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=56]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=57]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=58]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=59]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=60]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=61]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=62]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=63]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=64]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=65]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=66]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=67]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=68]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=69]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=70]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=71]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=72]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=73]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=74]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=75]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=76]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=77]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=78]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=79]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="NavigationPolygon" id=80]
+vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=81]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=82]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=83]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=84]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=90]
+resource_local_to_scene = true
+1/name = "FloorLinesAutotile"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 112, 96 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 178, Vector2( 0, 2 ), 50, Vector2( 0, 4 ), 182, Vector2( 1, 0 ), 184, Vector2( 1, 1 ), 186, Vector2( 1, 2 ), 58, Vector2( 1, 3 ), 248, Vector2( 1, 5 ), 59, Vector2( 2, 0 ), 152, Vector2( 2, 1 ), 154, Vector2( 2, 2 ), 26, Vector2( 2, 4 ), 155, Vector2( 3, 0 ), 144, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 18, Vector2( 3, 3 ), 48, Vector2( 3, 4 ), 56, Vector2( 3, 5 ), 24, Vector2( 4, 0 ), 432, Vector2( 4, 1 ), 438, Vector2( 4, 2 ), 54, Vector2( 4, 4 ), 434, Vector2( 5, 0 ), 504, Vector2( 5, 1 ), 511, Vector2( 5, 2 ), 63, Vector2( 5, 3 ), 440, Vector2( 5, 5 ), 62, Vector2( 6, 0 ), 216, Vector2( 6, 1 ), 219, Vector2( 6, 2 ), 27, Vector2( 6, 4 ), 218 ]
+1/autotile/icon_coordinate = Vector2( 1, 1 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [ Vector2( 0, 0 ), SubResource( 88 ), Vector2( 0, 1 ), SubResource( 89 ), Vector2( 0, 2 ), SubResource( 46 ), Vector2( 0, 3 ), SubResource( 47 ), Vector2( 0, 4 ), SubResource( 48 ), Vector2( 0, 5 ), SubResource( 49 ), Vector2( 1, 0 ), SubResource( 50 ), Vector2( 1, 1 ), SubResource( 85 ), Vector2( 1, 2 ), SubResource( 86 ), Vector2( 1, 3 ), SubResource( 53 ), Vector2( 1, 4 ), SubResource( 54 ), Vector2( 2, 0 ), SubResource( 55 ), Vector2( 2, 1 ), SubResource( 56 ), Vector2( 2, 2 ), SubResource( 57 ), Vector2( 2, 3 ), SubResource( 58 ), Vector2( 2, 4 ), SubResource( 59 ), Vector2( 3, 0 ), SubResource( 60 ), Vector2( 3, 1 ), SubResource( 61 ), Vector2( 3, 2 ), SubResource( 62 ), Vector2( 3, 3 ), SubResource( 63 ), Vector2( 3, 4 ), SubResource( 64 ), Vector2( 4, 0 ), SubResource( 65 ), Vector2( 4, 1 ), SubResource( 66 ), Vector2( 4, 2 ), SubResource( 67 ), Vector2( 4, 3 ), SubResource( 68 ), Vector2( 4, 4 ), SubResource( 69 ), Vector2( 5, 0 ), SubResource( 70 ), Vector2( 5, 1 ), SubResource( 71 ), Vector2( 5, 2 ), SubResource( 72 ), Vector2( 5, 3 ), SubResource( 73 ), Vector2( 5, 4 ), SubResource( 74 ), Vector2( 6, 0 ), SubResource( 75 ), Vector2( 6, 1 ), SubResource( 76 ), Vector2( 6, 2 ), SubResource( 77 ), Vector2( 6, 3 ), SubResource( 78 ), Vector2( 6, 4 ), SubResource( 79 ) ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+3/name = "PlainFloor"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 112, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/navigation = SubResource( 80 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Dungeon_Wall 01"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 81 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 81 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Dungeon_Wall 02"
+5/texture = ExtResource( 5 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 16, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 82 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 82 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "Dungeon_Wall 03"
+6/texture = ExtResource( 5 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 83 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 83 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "Dungeon_Wall 04"
+7/texture = ExtResource( 5 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 48, 0, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 84 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 84 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -208,7 +531,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=43]
+[sub_resource type="TileSet" id=87]
 resource_local_to_scene = true
 1/name = "FloorLinesAutotile"
 1/texture = ExtResource( 4 )
@@ -353,31 +676,34 @@ enabled_focus_mode = 0
 shortcut = SubResource( 45 )
 text = "Pause"
 
-[node name="MainRoom" parent="." instance=ExtResource( 1 )]
+[node name="Dungeon" type="Navigation2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="MainRoom" parent="Dungeon" instance=ExtResource( 1 )]
 position = Vector2( 147, 121 )
 
-[node name="Navigation2D" parent="MainRoom" index="1"]
-edge_connection_margin = 0.5
+[node name="TileMap" parent="Dungeon/MainRoom" index="1"]
+tile_set = SubResource( 90 )
 
-[node name="TileMap" parent="MainRoom/Navigation2D" index="0"]
-tile_set = SubResource( 43 )
+[node name="Navigation2D@TileMap" parent="Dungeon/MainRoom" index="2"]
+tile_set = SubResource( 87 )
 
-[node name="PlayerSpawn" parent="MainRoom" index="4"]
+[node name="PlayerSpawn" parent="Dungeon/MainRoom" index="6"]
 position = Vector2( -25, -35 )
 
-[node name="Position2D" parent="MainRoom/EnemyPosition" index="0"]
+[node name="Position2D" parent="Dungeon/MainRoom/EnemyPosition" index="0"]
 position = Vector2( -68, 21 )
 
-[node name="PlayerDetector" parent="MainRoom" index="6"]
+[node name="PlayerDetector" parent="Dungeon/MainRoom" index="8"]
 position = Vector2( 0, 8 )
 
-[node name="CollisionShape2D" parent="MainRoom/PlayerDetector" index="0"]
+[node name="CollisionShape2D" parent="Dungeon/MainRoom/PlayerDetector" index="0"]
 position = Vector2( 0, -9.25 )
 
-[node name="Line2D" type="Line2D" parent="MainRoom"]
+[node name="Line2D" type="Line2D" parent="Dungeon/MainRoom"]
 points = PoolVector2Array( -47, -121 )
 
 [connection signal="button_up" from="Control/Button" to="Control" method="_on_Button_button_up"]
-[connection signal="body_entered" from="MainRoom/PlayerDetector" to="MainRoom" method="_on_PlayerDetector_body_entered"]
+[connection signal="body_entered" from="Dungeon/MainRoom/PlayerDetector" to="Dungeon/MainRoom" method="_on_PlayerDetector_body_entered"]
 
-[editable path="MainRoom"]
+[editable path="Dungeon/MainRoom"]

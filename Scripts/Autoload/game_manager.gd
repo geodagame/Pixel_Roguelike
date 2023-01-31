@@ -6,7 +6,7 @@ var player_exists = false
 var game_has_started = false
 var player_preload = preload("res://Scenes/_Nodes/player.tscn")
 var player_node 
-onready var current_room = get_tree().current_scene.get_node("MainRoom")
+onready var current_room = get_tree().current_scene.get_node("Dungeon").get_node("MainRoom")
 
 # ---- Funciones
 
