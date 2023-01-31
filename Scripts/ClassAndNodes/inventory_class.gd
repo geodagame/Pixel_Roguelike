@@ -31,7 +31,7 @@ func add_equipable(item : Item):
 	inv_slots[index] = item
 	emit_signal("update_item", index)
 
-
+ 
 func equip_item(inv_index, item, input):
 	# Equipa un item
 	var item_to_equip = inv_slots[inv_index]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Sprites/Rooms/Dungeon_RoomTiles.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/_Nodes/equipable.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scripts/Autoload/debug_helper.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/_Nodes/inventory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Rooms/StartRoom_01.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/ClassAndNodes/item_class.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/Items/pocion.png" type="Texture" id=9]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -330,6 +332,17 @@ resource_local_to_scene = true
 } ]
 7/z_index = 0
 
+[sub_resource type="Resource" id=44]
+resource_local_to_scene = true
+script = ExtResource( 8 )
+texture = ExtResource( 9 )
+item_name = ""
+description = "una pocion hecha por un  antiguo alquimista te cura 20 hp"
+slot = 0
+item_tipe = 0
+value = 20
+amount = 0
+
 [node name="JoeDevroom" type="Node2D"]
 position = Vector2( -4, -20 )
 script = ExtResource( 5 )
@@ -348,6 +361,7 @@ disabled = true
 
 [node name="usable" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144, 154 )
+item = SubResource( 44 )
 
 [node name="equipable" parent="." instance=ExtResource( 2 )]
 position = Vector2( 291, 76 )
